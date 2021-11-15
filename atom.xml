@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-11-13T02:19:57.578Z</updated>
+  <updated>2021-11-15T11:43:34.283Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习汇编7</title>
+    <link href="http://example.com/2021/11/15/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%967/"/>
+    <id>http://example.com/2021/11/15/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%967/</id>
+    <published>2021-11-15T11:12:59.000Z</published>
+    <updated>2021-11-15T11:43:34.283Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h3 id=&quot;先认识两个指令：G指令和P指令。&quot;&gt;&lt;a href=&quot;#先认识两个指令：G指令和P指令。&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>学习汇编6</title>
