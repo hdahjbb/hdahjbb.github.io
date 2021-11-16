@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-11-15T11:49:50.691Z</updated>
+  <updated>2021-11-16T05:00:21.464Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习汇编8</title>
+    <link href="http://example.com/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%968/"/>
+    <id>http://example.com/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%968/</id>
+    <published>2021-11-16T04:38:18.000Z</published>
+    <updated>2021-11-16T05:00:21.464Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h1&gt;&lt;h4 id=&quot;先认识一个指令“inc”-inc指令就如同c语言中的-，自加一。&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>学习汇编7</title>
