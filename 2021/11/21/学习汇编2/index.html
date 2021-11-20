@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="爱拼才会赢">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="#学习汇编2##前言：今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。##问题：如何把10000H放入DS寄存器中？###解决办法：上次学的是利用debug的t指令来执行单条指令，而debug执行的第一条指令便是通过CS与IP寄存器加起来索引对应的物理地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习汇编2">
+<meta property="og:url" content="http://example.com/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="爱拼才会赢">
+<meta property="og:description" content="#学习汇编2##前言：今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。##问题：如何把10000H放入DS寄存器中？###解决办法：上次学的是利用debug的t指令来执行单条指令，而debug执行的第一条指令便是通过CS与IP寄存器加起来索引对应的物理地">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-20T16:11:52.119Z">
+<meta property="article:modified_time" content="2021-10-30T01:40:56.448Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/2021/">
+<link rel="canonical" href="http://example.com/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/">
 
 
 <script id="page-configurations">
@@ -38,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Hexo</title>
+  <title>学习汇编2 | Hexo</title>
   
 
 
@@ -142,234 +144,103 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 11 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习汇编2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-21 00:11:52" itemprop="dateCreated datePublished" datetime="2021-11-21T00:11:52+08:00">2021-11-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-30 09:40:56" itemprop="dateModified" datetime="2021-10-30T09:40:56+08:00">2021-10-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>#学习汇编2<br>##前言：今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。<br>##问题：如何把10000H放入DS寄存器中？<br>###解决办法：上次学的是利用debug的t指令来执行单条指令，而debug执行的第一条指令便是通过CS与IP寄存器加起来索引对应的物理地址，然后执行对应内存当中的指令。穿插一点：上述我们提到了如何将10000H放入DS寄存器中，而根据我所学的8086CPU，指令：move DS 10000H是非法的，必须通过把数据先写进通用寄存器，然后再执行：move DS AX把刚刚写进AX通用寄存器的值写进DS。所以如何解决刚刚提出的问题，就是先运用a指令以汇编指令的形式在内存中写入一条机器指令，首先将第一个内存写入move AX 10000H，再写入move DS AX。然后记下这个内存的物理地址对应的段地址和偏移地址各为多少，用r指令把CS IP里的内容改为刚刚的内存地址，再运行，就可以成功将10000H放入DS啦。<br>###引申：那么是不是每次debug执行一条指令总是先读取CS和IP对应的内存呢？</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-21T00:11:52+08:00"
-              content="2021-11-21">
-          11-21
-        </time>
-      </div>
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/" itemprop="url">
-            <span itemprop="name">学习汇编2</span>
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-16T20:07:35+08:00"
-              content="2021-11-16">
-          11-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%969/" itemprop="url">
-            <span itemprop="name">学习汇编9</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-16T12:38:18+08:00"
-              content="2021-11-16">
-          11-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%968/" itemprop="url">
-            <span itemprop="name">学习汇编8</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-15T19:12:59+08:00"
-              content="2021-11-15">
-          11-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/15/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%967/" itemprop="url">
-            <span itemprop="name">学习汇编7</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-13T09:42:13+08:00"
-              content="2021-11-13">
-          11-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%966/" itemprop="url">
-            <span itemprop="name">学习汇编6</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-13T08:27:58+08:00"
-              content="2021-11-13">
-          11-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%965/" itemprop="url">
-            <span itemprop="name">学习汇编5</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-13T08:24:42+08:00"
-              content="2021-11-13">
-          11-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/13/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-07T13:20:29+08:00"
-              content="2021-11-07">
-          11-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/07/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%964/" itemprop="url">
-            <span itemprop="name">学习汇编4</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-10-31T17:03:50+08:00"
-              content="2021-10-31">
-          10-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/10/31/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%963/" itemprop="url">
-            <span itemprop="name">学习汇编3</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-09-22T21:17:19+08:00"
-              content="2021-09-22">
-          09-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/09/22/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%961/" itemprop="url">
-            <span itemprop="name">学习汇编1</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%969/" rel="prev" title="学习汇编9">
+      <i class="fa fa-chevron-left"></i> 学习汇编9
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
