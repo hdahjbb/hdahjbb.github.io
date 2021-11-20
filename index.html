@@ -171,16 +171,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-11-21 00:11:52" itemprop="dateCreated datePublished" datetime="2021-11-21T00:11:52+08:00">2021-11-21</time>
+              <time title="Created: 2021-11-21 00:11:52 / Modified: 00:16:55" itemprop="dateCreated datePublished" datetime="2021-11-21T00:11:52+08:00">2021-11-21</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-30 09:40:56" itemprop="dateModified" datetime="2021-10-30T09:40:56+08:00">2021-10-30</time>
-              </span>
 
           
 
@@ -193,7 +187,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>#学习汇编2<br>##前言：今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。<br>##问题：如何把10000H放入DS寄存器中？<br>###解决办法：上次学的是利用debug的t指令来执行单条指令，而debug执行的第一条指令便是通过CS与IP寄存器加起来索引对应的物理地址，然后执行对应内存当中的指令。穿插一点：上述我们提到了如何将10000H放入DS寄存器中，而根据我所学的8086CPU，指令：move DS 10000H是非法的，必须通过把数据先写进通用寄存器，然后再执行：move DS AX把刚刚写进AX通用寄存器的值写进DS。所以如何解决刚刚提出的问题，就是先运用a指令以汇编指令的形式在内存中写入一条机器指令，首先将第一个内存写入move AX 10000H，再写入move DS AX。然后记下这个内存的物理地址对应的段地址和偏移地址各为多少，用r指令把CS IP里的内容改为刚刚的内存地址，再运行，就可以成功将10000H放入DS啦。<br>###引申：那么是不是每次debug执行一条指令总是先读取CS和IP对应的内存呢？</p>
+          <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。</p>
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>如何把10000H放入DS寄存器中？</p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>上次学的是利用debug的t指令来执行单条指令，而debug执行的第一条指令便是通过CS与IP寄存器加起来索引对应的物理地址，然后执行对应内存当中的指令。穿插一点：上述我们提到了如何将10000H放入DS寄存器中，而根据我所学的8086CPU，指令：move DS 10000H是非法的，必须通过把数据先写进通用寄存器，然后再执行：move DS AX把刚刚写进AX通用寄存器的值写进DS。所以如何解决刚刚提出的问题，就是先运用a指令以汇编指令的形式在内存中写入一条机器指令，首先将第一个内存写入move AX 10000H，再写入move DS AX。然后记下这个内存的物理地址对应的段地址和偏移地址各为多少，用r指令把CS IP里的内容改为刚刚的内存地址，再运行，就可以成功将10000H放入DS啦。</p>
+<h3 id="引申："><a href="#引申：" class="headerlink" title="引申："></a>引申：</h3><p>那么是不是每次debug执行一条指令总是先读取CS和IP对应的内存呢？</p>
 
       
     </div>
@@ -683,10 +680,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-10-31 17:03:50 / Modified: 17:16:46" itemprop="dateCreated datePublished" datetime="2021-10-31T17:03:50+08:00">2021-10-31</time>
+              <time title="Created: 2021-10-31 17:03:50" itemprop="dateCreated datePublished" datetime="2021-10-31T17:03:50+08:00">2021-10-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-21 00:17:33" itemprop="dateModified" datetime="2021-11-21T00:17:33+08:00">2021-11-21</time>
+              </span>
 
           
 
@@ -699,7 +702,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>#前言：今天初步学习了栈，在这里记录一下对栈的初步理解。<br>##我对栈的概念的理解：栈是一个人为定义的特殊的内存空间，它与其他内存段不同的主要在于FILO（first in last out），就是先推入栈的值会最后出来，就如同叠书本一样，垫底的是放进去的，最后拿出来的就是那本垫底的，这就是栈与其他内存空间的不同。<br>##与栈相关的指令：由于是初步学习，所以就只知道push和pop。push就是把数据推入栈，pop就是把栈里的数据拿踩出来。值得注意的是，在push的时候，CPU不是通过CS寄存器寻址，而是通过SS寄存器，与其他段地址寄存器一样，SS也不能直接输入数据，必须通过通用寄存器来交接。<br>##以上就是我对栈的初步认识。<br>##一些其他的知识：当我们格式化硬盘的时候，其实数据并没有抹去，而是改变了CPU的索引，直到下一步操作，新数据覆盖了原有的数据，硬盘里的旧数据才会消失。</p>
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>今天初步学习了栈，在这里记录一下对栈的初步理解。</p>
+<h2 id="我对栈的概念的理解："><a href="#我对栈的概念的理解：" class="headerlink" title="我对栈的概念的理解："></a>我对栈的概念的理解：</h2><p>栈是一个人为定义的特殊的内存空间，它与其他内存段不同的主要在于FILO（first in last out），就是先推入栈的值会最后出来，就如同叠书本一样，垫底的是放进去的，最后拿出来的就是那本垫底的，这就是栈与其他内存空间的不同。</p>
+<h2 id="与栈相关的指令："><a href="#与栈相关的指令：" class="headerlink" title="与栈相关的指令："></a>与栈相关的指令：</h2><p>由于是初步学习，所以就只知道push和pop。push就是把数据推入栈，pop就是把栈里的数据拿踩出来。值得注意的是，在push的时候，CPU不是通过CS寄存器寻址，而是通过SS寄存器，与其他段地址寄存器一样，SS也不能直接输入数据，必须通过通用寄存器来交接。<br>以上就是我对栈的初步认识。</p>
+<h2 id="一些其他的知识："><a href="#一些其他的知识：" class="headerlink" title="一些其他的知识："></a>一些其他的知识：</h2><p>当我们格式化硬盘的时候，其实数据并没有抹去，而是改变了CPU的索引，直到下一步操作，新数据覆盖了原有的数据，硬盘里的旧数据才会消失。</p>
 
       
     </div>

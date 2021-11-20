@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-30T01:40:56.448Z</updated>
+  <updated>2021-11-20T16:16:55.849Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://example.com/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/"/>
     <id>http://example.com/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/</id>
     <published>2021-11-20T16:11:52.119Z</published>
-    <updated>2021-10-30T01:40:56.448Z</updated>
+    <updated>2021-11-20T16:16:55.849Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;#学习汇编2&lt;br&gt;##前言：今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。&lt;br&gt;##问题：如何把10000H放入DS寄存器</summary>
+    <summary type="html">&lt;h2 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -189,14 +189,15 @@
     <link href="http://example.com/2021/10/31/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%963/"/>
     <id>http://example.com/2021/10/31/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%963/</id>
     <published>2021-10-31T09:03:50.000Z</published>
-    <updated>2021-10-31T09:16:46.738Z</updated>
+    <updated>2021-11-20T16:17:33.982Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;#前言：今天初步学习了栈，在这里记录一下对栈的初步理解。&lt;br&gt;##我对栈的概念的理解：栈是一个人为定义的特殊的内存空间，它与其他内存段不同的主要在于FILO（first in last</summary>
+    <summary type="html">&lt;h1 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h1&gt;&lt;p&gt;今天初步学习了栈，在这里记录一下对栈的初步理解。&lt;/p&gt;
+&lt;h2 id=&quot;我对栈的概念的理解：&quot;&gt;&lt;a</summary>
         
       
     
