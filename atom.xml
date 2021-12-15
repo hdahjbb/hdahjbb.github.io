@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-13T11:14:01.667Z</updated>
+  <updated>2021-12-15T07:13:52.184Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初步认识指针（2）</title>
+    <link href="http://example.com/2021/12/15/%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%8C%87%E9%92%88%EF%BC%882%EF%BC%89/"/>
+    <id>http://example.com/2021/12/15/%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%8C%87%E9%92%88%EF%BC%882%EF%BC%89/</id>
+    <published>2021-12-15T07:00:19.000Z</published>
+    <updated>2021-12-15T07:13:52.184Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h1&gt;&lt;p&gt;继上次的初步认识指针，这次说到的指针的作用可以用于数组之间的传递，和函数之间的传递。&lt;/p&gt;
+&lt;h1 id=&quot;正文：&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>初步认识指针</title>
