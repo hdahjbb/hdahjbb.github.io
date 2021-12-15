@@ -148,6 +148,64 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%965/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%965/" class="post-title-link" itemprop="url">学习汇编5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-13 08:27:58 / Modified: 08:48:51" itemprop="dateCreated datePublished" datetime="2021-11-13T08:27:58+08:00">2021-11-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="引言：本文将讲述我自己对-exe文件的执行过程的理解。"><a href="#引言：本文将讲述我自己对-exe文件的执行过程的理解。" class="headerlink" title="引言：本文将讲述我自己对.exe文件的执行过程的理解。"></a>引言：本文将讲述我自己对.exe文件的执行过程的理解。</h1><h1 id="正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个-asm文件，之后通过command使用masm-link或ml指令完成编译和链接成一个-exe文件。"><a href="#正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个-asm文件，之后通过command使用masm-link或ml指令完成编译和链接成一个-exe文件。" class="headerlink" title="正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个.asm文件，之后通过command使用masm+link或ml指令完成编译和链接成一个.exe文件。"></a>正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个.asm文件，之后通过command使用masm+link或ml指令完成编译和链接成一个.exe文件。</h1><h1 id="exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000-10E：0。总而言之一个-exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。"><a href="#exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000-10E：0。总而言之一个-exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。" class="headerlink" title=".exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000+10E：0。总而言之一个.exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。"></a>.exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000+10E：0。总而言之一个.exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -550,7 +608,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
