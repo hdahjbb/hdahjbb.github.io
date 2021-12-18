@@ -148,6 +148,67 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/18/%E5%8D%95%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/18/%E5%8D%95%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA/" class="post-title-link" itemprop="url">单字符输入/输出</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-18 16:40:06 / Modified: 16:53:19" itemprop="dateCreated datePublished" datetime="2021-12-18T16:40:06+08:00">2021-12-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>在读取一个字符串的时候，如果遇到空格或者回车，读取就会自动停止，所以当我们需要读取一串包括空格的字符串时，不妨可以试试getchar，配合putchar进行输出。</p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><p>先看这样一张图片：<br><img src="https://s2.loli.net/2021/12/18/CeOnFZc3pfr6Sgx.png" alt="QQ截图20211218164551.png"><br>当这个程序运行的时候我们会得到这样的结果：<img src="https://s2.loli.net/2021/12/18/ogp76bNeTZQnUJY.png" alt="QQ截图20211218164509.png"><br>因为在我们的键盘和输出终端之间有一个缓冲区，会将我们在程序运行时输入的东西加载到缓冲区里面，当读取到’/0’的时候才会让程序接下去运行，也就是执行putchar让其一个个输出。但是为什么不会执行循环后的printf呢？因为缓冲区会一直等我们输入返回值为-1的时候，才会结束getchar和putchar循环进入下一个程序。</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>单字符输入与输出可以解决scanf不能读入空格的障碍，但是要注意运行程序时的缓冲区的作用效果。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/18/%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A4%E8%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -705,70 +766,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/15/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%967/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/15/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%967/" class="post-title-link" itemprop="url">学习汇编7</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-11-15 19:12:59" itemprop="dateCreated datePublished" datetime="2021-11-15T19:12:59+08:00">2021-11-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-16 19:44:09" itemprop="dateModified" datetime="2021-11-16T19:44:09+08:00">2021-11-16</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="先认识两个指令：G指令和P指令。"><a href="#先认识两个指令：G指令和P指令。" class="headerlink" title="先认识两个指令：G指令和P指令。"></a>先认识两个指令：G指令和P指令。</h3><h3 id="G指令：跟踪程序执行至任意一个位置。"><a href="#G指令：跟踪程序执行至任意一个位置。" class="headerlink" title="G指令：跟踪程序执行至任意一个位置。"></a>G指令：跟踪程序执行至任意一个位置。</h3><h3 id="P指令：结束程序的循环过程。"><a href="#P指令：结束程序的循环过程。" class="headerlink" title="P指令：结束程序的循环过程。"></a>P指令：结束程序的循环过程。</h3><h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="今天记录的是loop循环配合寄存器CX完成一个循环过程。首先我们知道loop的英文意思是循环的意思，所以在使用它的时候就是帮助我们执行一个循环的语句。原理如下：我们先设定CX中的值，然后在需要执行的代码前加上一个标号，具体方式为：“标号：循环需要执行的代码”。这个标号会被编译器自动编译成一个地址，然后“loop-标号”使CPU回去标号处继续执行标号后的内容，在下一次回到标号后的代码时，CX中的值会自减一，当CX中的值变为0时，循环结束。举个例子：如果我们要计算129，那么我们可以先设定这么一条语句（move-CX，9），然后（s：add-AX，12），接着（loop-s）如此以来当程序执行完AX寄存器中的值便是129的值。当我们在调试一个loop循环时，为了避免t指令执行好几百次，我们可以使用P指令直接到达循环语句的下一个语句，也可使用G指令指向我们所要的那条代码的偏移地址。用法（G-偏移地址）以达到跟踪程序的目的。"><a href="#今天记录的是loop循环配合寄存器CX完成一个循环过程。首先我们知道loop的英文意思是循环的意思，所以在使用它的时候就是帮助我们执行一个循环的语句。原理如下：我们先设定CX中的值，然后在需要执行的代码前加上一个标号，具体方式为：“标号：循环需要执行的代码”。这个标号会被编译器自动编译成一个地址，然后“loop-标号”使CPU回去标号处继续执行标号后的内容，在下一次回到标号后的代码时，CX中的值会自减一，当CX中的值变为0时，循环结束。举个例子：如果我们要计算129，那么我们可以先设定这么一条语句（move-CX，9），然后（s：add-AX，12），接着（loop-s）如此以来当程序执行完AX寄存器中的值便是129的值。当我们在调试一个loop循环时，为了避免t指令执行好几百次，我们可以使用P指令直接到达循环语句的下一个语句，也可使用G指令指向我们所要的那条代码的偏移地址。用法（G-偏移地址）以达到跟踪程序的目的。" class="headerlink" title="今天记录的是loop循环配合寄存器CX完成一个循环过程。首先我们知道loop的英文意思是循环的意思，所以在使用它的时候就是帮助我们执行一个循环的语句。原理如下：我们先设定CX中的值，然后在需要执行的代码前加上一个标号，具体方式为：“标号：循环需要执行的代码”。这个标号会被编译器自动编译成一个地址，然后“loop 标号”使CPU回去标号处继续执行标号后的内容，在下一次回到标号后的代码时，CX中的值会自减一，当CX中的值变为0时，循环结束。举个例子：如果我们要计算129，那么我们可以先设定这么一条语句（move CX，9），然后（s：add AX，12），接着（loop s）如此以来当程序执行完AX寄存器中的值便是129的值。当我们在调试一个loop循环时，为了避免t指令执行好几百次，我们可以使用P指令直接到达循环语句的下一个语句，也可使用G指令指向我们所要的那条代码的偏移地址。用法（G 偏移地址）以达到跟踪程序的目的。"></a>今天记录的是loop循环配合寄存器CX完成一个循环过程。首先我们知道loop的英文意思是循环的意思，所以在使用它的时候就是帮助我们执行一个循环的语句。原理如下：我们先设定CX中的值，然后在需要执行的代码前加上一个标号，具体方式为：“标号：循环需要执行的代码”。这个标号会被编译器自动编译成一个地址，然后“loop 标号”使CPU回去标号处继续执行标号后的内容，在下一次回到标号后的代码时，CX中的值会自减一，当CX中的值变为0时，循环结束。举个例子：如果我们要计算12<em>9，那么我们可以先设定这么一条语句（move CX，9），然后（s：add AX，12），接着（loop s）如此以来当程序执行完AX寄存器中的值便是12</em>9的值。当我们在调试一个loop循环时，为了避免t指令执行好几百次，我们可以使用P指令直接到达循环语句的下一个语句，也可使用G指令指向我们所要的那条代码的偏移地址。用法（G 偏移地址）以达到跟踪程序的目的。</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -838,7 +835,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
