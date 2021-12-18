@@ -148,6 +148,64 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%968/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%968/" class="post-title-link" itemprop="url">学习汇编8</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-16 12:38:18 / Modified: 19:43:51" itemprop="dateCreated datePublished" datetime="2021-11-16T12:38:18+08:00">2021-11-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><h4 id="先认识一个指令“inc”-inc指令就如同c语言中的-，自加一。"><a href="#先认识一个指令“inc”-inc指令就如同c语言中的-，自加一。" class="headerlink" title="先认识一个指令“inc”:inc指令就如同c语言中的++，自加一。"></a>先认识一个指令“inc”:inc指令就如同c语言中的++，自加一。</h4><h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h4 id="提一个值得注意的点，在使用汇编指令编写代码时需注意位数不同不可混合运算，比如，不能将ds：0中的内容放入寄存器bx中，因为一个偏移地址只有一个字节，也就是八位，而bx寄存器是一个16位的寄存器，所以不能进行这样的操作。"><a href="#提一个值得注意的点，在使用汇编指令编写代码时需注意位数不同不可混合运算，比如，不能将ds：0中的内容放入寄存器bx中，因为一个偏移地址只有一个字节，也就是八位，而bx寄存器是一个16位的寄存器，所以不能进行这样的操作。" class="headerlink" title="提一个值得注意的点，在使用汇编指令编写代码时需注意位数不同不可混合运算，比如，不能将ds：0中的内容放入寄存器bx中，因为一个偏移地址只有一个字节，也就是八位，而bx寄存器是一个16位的寄存器，所以不能进行这样的操作。"></a>提一个值得注意的点，在使用汇编指令编写代码时需注意位数不同不可混合运算，比如，不能将ds：0中的内容放入寄存器bx中，因为一个偏移地址只有一个字节，也就是八位，而bx寄存器是一个16位的寄存器，所以不能进行这样的操作。</h4><h3 id="那么我们如果想要将ds：0到ds：b的值加起来放入bx中呢？"><a href="#那么我们如果想要将ds：0到ds：b的值加起来放入bx中呢？" class="headerlink" title="那么我们如果想要将ds：0到ds：b的值加起来放入bx中呢？"></a>那么我们如果想要将ds：0到ds：b的值加起来放入bx中呢？</h3><h4 id="这个时候我们可以利用一个额外的寄存器作为中介，然后把这个寄存器的值移到bx中即可。"><a href="#这个时候我们可以利用一个额外的寄存器作为中介，然后把这个寄存器的值移到bx中即可。" class="headerlink" title="这个时候我们可以利用一个额外的寄存器作为中介，然后把这个寄存器的值移到bx中即可。"></a>这个时候我们可以利用一个额外的寄存器作为中介，然后把这个寄存器的值移到bx中即可。</h4><h3 id="具体操作步骤："><a href="#具体操作步骤：" class="headerlink" title="具体操作步骤："></a>具体操作步骤：</h3><h4 id="因为偏移地址0到b是12个字节，所以我们可以先把ax的值置0，将dx的值也置0，然后利用loop循环完成。先设置cx的值为12，然后给定一个标号s：move-al，ds-dx-，再move-ah，0，然后move-bx，ax，然后inc-dx，最后再loop-s就可以了，这样子每次循环一次后dx都会自加1，执行12次后刚好将0到b中的值全部放入bx。"><a href="#因为偏移地址0到b是12个字节，所以我们可以先把ax的值置0，将dx的值也置0，然后利用loop循环完成。先设置cx的值为12，然后给定一个标号s：move-al，ds-dx-，再move-ah，0，然后move-bx，ax，然后inc-dx，最后再loop-s就可以了，这样子每次循环一次后dx都会自加1，执行12次后刚好将0到b中的值全部放入bx。" class="headerlink" title="因为偏移地址0到b是12个字节，所以我们可以先把ax的值置0，将dx的值也置0，然后利用loop循环完成。先设置cx的值为12，然后给定一个标号s：move al，ds:[dx]，再move ah，0，然后move bx，ax，然后inc dx，最后再loop s就可以了，这样子每次循环一次后dx都会自加1，执行12次后刚好将0到b中的值全部放入bx。"></a>因为偏移地址0到b是12个字节，所以我们可以先把ax的值置0，将dx的值也置0，然后利用loop循环完成。先设置cx的值为12，然后给定一个标号s：move al，ds:[dx]，再move ah，0，然后move bx，ax，然后inc dx，最后再loop s就可以了，这样子每次循环一次后dx都会自加1，执行12次后刚好将0到b中的值全部放入bx。</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/15/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%967/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -736,7 +794,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

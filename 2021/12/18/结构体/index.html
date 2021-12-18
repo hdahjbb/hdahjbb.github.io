@@ -20,22 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="前言：我们经常会看到p++，p–，p1-p，p2-p1等对指针的运算，以下介绍的就是关于指针的运算。 正文：两个指针之间的相加减：如图是两个指针之间的相加减：p1-p&#x3D;5，q1-q&#x3D;6，q的地址不是0xbff11d28，q1的地址不是0xbff11d40吗？按照16进制的算法不应该是等于24吗？为什么等于6呢，这里面是不是有什么猫腻，细心的你会发现24&#x2F;4刚好等于6，而4刚好就是q指针类型的大小。">
+  <meta name="description" content="前言：结构体其实和数组有点像，数组里是含有很多个单元来存储相同类型的值，而结构体与数组的区别就在于结构体里面可以有不同类型的值。 正文：定义一个结构体：如图所示：我们可以通过图中所示三种定义反式定义一个结构体，第一种和第三种是比较常用的。其中point是我们新定义的结构体的类型，p1和p2是变量。 结构体中的变量的赋值：于是我们就可以对这两个变量进行赋值。比如struct point p1&#x3D;{2，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指针的运算">
-<meta property="og:url" content="http://example.com/2021/12/15/%E6%8C%87%E9%92%88%E7%9A%84%E8%BF%90%E7%AE%97/index.html">
+<meta property="og:title" content="结构体">
+<meta property="og:url" content="http://example.com/2021/12/18/%E7%BB%93%E6%9E%84%E4%BD%93/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言：我们经常会看到p++，p–，p1-p，p2-p1等对指针的运算，以下介绍的就是关于指针的运算。 正文：两个指针之间的相加减：如图是两个指针之间的相加减：p1-p&#x3D;5，q1-q&#x3D;6，q的地址不是0xbff11d28，q1的地址不是0xbff11d40吗？按照16进制的算法不应该是等于24吗？为什么等于6呢，这里面是不是有什么猫腻，细心的你会发现24&#x2F;4刚好等于6，而4刚好就是q指针类型的大小。">
+<meta property="og:description" content="前言：结构体其实和数组有点像，数组里是含有很多个单元来存储相同类型的值，而结构体与数组的区别就在于结构体里面可以有不同类型的值。 正文：定义一个结构体：如图所示：我们可以通过图中所示三种定义反式定义一个结构体，第一种和第三种是比较常用的。其中point是我们新定义的结构体的类型，p1和p2是变量。 结构体中的变量的赋值：于是我们就可以对这两个变量进行赋值。比如struct point p1&#x3D;{2，">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s2.loli.net/2021/12/15/xa7FLqT9SpKVQ1o.png">
-<meta property="og:image" content="https://s2.loli.net/2021/12/15/y9VKG4xcj3AD2qY.png">
-<meta property="article:published_time" content="2021-12-15T08:03:59.000Z">
-<meta property="article:modified_time" content="2021-12-15T08:53:55.336Z">
+<meta property="og:image" content="https://s2.loli.net/2021/12/18/eN7jfm2rTXOzLxq.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/18/zhKr3qtDy9uPmpc.png">
+<meta property="article:published_time" content="2021-12-18T09:25:12.000Z">
+<meta property="article:modified_time" content="2021-12-18T09:55:58.310Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2021/12/15/xa7FLqT9SpKVQ1o.png">
+<meta name="twitter:image" content="https://s2.loli.net/2021/12/18/eN7jfm2rTXOzLxq.png">
 
-<link rel="canonical" href="http://example.com/2021/12/15/%E6%8C%87%E9%92%88%E7%9A%84%E8%BF%90%E7%AE%97/">
+<link rel="canonical" href="http://example.com/2021/12/18/%E7%BB%93%E6%9E%84%E4%BD%93/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>指针的运算 | Hexo</title>
+  <title>结构体 | Hexo</title>
   
 
 
@@ -154,7 +154,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/15/%E6%8C%87%E9%92%88%E7%9A%84%E8%BF%90%E7%AE%97/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/18/%E7%BB%93%E6%9E%84%E4%BD%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -167,7 +167,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          指针的运算
+          结构体
         </h1>
 
         <div class="post-meta">
@@ -178,7 +178,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-15 16:03:59 / Modified: 16:53:55" itemprop="dateCreated datePublished" datetime="2021-12-15T16:03:59+08:00">2021-12-15</time>
+              <time title="Created: 2021-12-18 17:25:12 / Modified: 17:55:58" itemprop="dateCreated datePublished" datetime="2021-12-18T17:25:12+08:00">2021-12-18</time>
             </span>
 
           
@@ -192,9 +192,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>我们经常会看到p++，p–，p1-p，p2-p1等对指针的运算，以下介绍的就是关于指针的运算。</p>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="两个指针之间的相加减："><a href="#两个指针之间的相加减：" class="headerlink" title="两个指针之间的相加减："></a>两个指针之间的相加减：</h2><p><img src="https://s2.loli.net/2021/12/15/xa7FLqT9SpKVQ1o.png" alt="QQ截图20211215160507.png"><br>如图是两个指针之间的相加减：p1-p=5，q1-q=6，q的地址不是0xbff11d28，q1的地址不是0xbff11d40吗？按照16进制的算法不应该是等于24吗？为什么等于6呢，这里面是不是有什么猫腻，细心的你会发现24/4刚好等于6，而4刚好就是q指针类型的大小。所以两个指针相减得到的是这两个指针之间有几个同类型的个数。</p>
-<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><p>指针有一个作用：动态分配内存。如图所示：<img src="https://s2.loli.net/2021/12/15/y9VKG4xcj3AD2qY.png" alt="QQ截图20211215164522.png"><br>在c99以前的编译器没有执行自动分组的代码，所以需要运用malloc函数给一个变量分配一块存储空间，然后再根据我们想要的使他以那个类型在作用。最后通过free(变量)将内存空间还回去即可。</p>
+        <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>结构体其实和数组有点像，数组里是含有很多个单元来存储相同类型的值，而结构体与数组的区别就在于结构体里面可以有不同类型的值。</p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="定义一个结构体："><a href="#定义一个结构体：" class="headerlink" title="定义一个结构体："></a>定义一个结构体：</h2><p>如图所示：<img src="https://s2.loli.net/2021/12/18/eN7jfm2rTXOzLxq.png" alt="QQ截图20211218171759.png">我们可以通过图中所示三种定义反式定义一个结构体，第一种和第三种是比较常用的。其中point是我们新定义的结构体的类型，p1和p2是变量。</p>
+<h2 id="结构体中的变量的赋值："><a href="#结构体中的变量的赋值：" class="headerlink" title="结构体中的变量的赋值："></a>结构体中的变量的赋值：</h2><p>于是我们就可以对这两个变量进行赋值。比如struct point p1={2，3}。这样子就是把2，3依次赋值给x和y。如果是想要给y赋值而不动x，可以用struct point p1{.y=2}，这样子就可以做到将2赋值给y，而x没有改变。如果在初始化后还想对变量里的值进行修改的话，也可以通过直接p1.y=3从而把p1里的y赋值为3。</p>
+<h2 id="结构的运算："><a href="#结构的运算：" class="headerlink" title="结构的运算："></a>结构的运算：</h2><p><img src="https://s2.loli.net/2021/12/18/zhKr3qtDy9uPmpc.png" alt="QQ截图20211218174156.png">如图所示：我们首先用一个大括号把两个数值放进去，然后在其前面加上一个强制类型转化，转化成我们之前定义的结构体的类型，也就是point型，在赋值给相同类型的p1变量。此时x就等于5，y就等于10。还有p1=p2的写法，得到的就是p1的x和y分别与p2的x和相等。</p>
+<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><p>结构指针和数组指针的区别。我们在定义一个数组的时候，系统会自动将数组名定义成一个指针。而结构指针就必须使用“&amp;”符号，才能够定义一个指针指向结构名。</p>
 
     </div>
 
@@ -229,13 +231,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/15/%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%8C%87%E9%92%88%EF%BC%882%EF%BC%89/" rel="prev" title="初步认识指针（2）">
-      <i class="fa fa-chevron-left"></i> 初步认识指针（2）
+    <a href="/2021/12/18/%E5%8D%95%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA/" rel="prev" title="单字符输入/输出">
+      <i class="fa fa-chevron-left"></i> 单字符输入/输出
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/12/18/%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A4%E8%AF%86/" rel="next" title="对字符串的认识">
-      对字符串的认识 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -294,7 +293,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">正文：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%8C%87%E9%92%88%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E5%8A%A0%E5%87%8F%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">两个指针之间的相加减：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">补充：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">正文：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">定义一个结构体：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%9A%84%E8%B5%8B%E5%80%BC%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">结构体中的变量的赋值：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%9A%84%E8%BF%90%E7%AE%97%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">结构的运算：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">补充：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

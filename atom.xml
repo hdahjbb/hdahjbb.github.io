@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-18T08:53:19.068Z</updated>
+  <updated>2021-12-18T09:55:58.310Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>结构体</title>
+    <link href="http://example.com/2021/12/18/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
+    <id>http://example.com/2021/12/18/%E7%BB%93%E6%9E%84%E4%BD%93/</id>
+    <published>2021-12-18T09:25:12.000Z</published>
+    <updated>2021-12-18T09:55:58.310Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>单字符输入/输出</title>
