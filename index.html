@@ -148,6 +148,67 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/18/%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A4%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/18/%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A4%E8%AF%86/" class="post-title-link" itemprop="url">对字符串的认识</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-18 15:53:14 / Modified: 16:29:49" itemprop="dateCreated datePublished" datetime="2021-12-18T15:53:14+08:00">2021-12-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>学完了指针然后再重新看一遍字符串，才知道其实字符串也是一个数组，就是一个char型的数组里面存储一串字符。用%s来读取和输出。</p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="定义字符串："><a href="#定义字符串：" class="headerlink" title="定义字符串："></a>定义字符串：</h2><p>我们用%c来表示字符，但是仅仅只是一个字符，就如同一个数字单独存在那边，但是有的时候我们需要一个单词的运算：如输入或者输出。这个时候就需要字符串，说白了就是一个个字符组成的一个变量，那么我们就需要用到数组，在数组的每一个字节空间里面存一个字母，然后输出这个数组就成了一个字符串。而我们在学习函数的时候，知道数组产生以后，他的数组名都会被初始化成一个指针，与数组的第一个元素的地址一样，所以当我们在定义一个字符串数组的时候也可以利用指针的形式来存储。所以我们可以这样子定义一个字符串数组：char string[10]=”HELLO”或者char *string=”HELLO”,但是无论是这两种的哪一种，系统都将会帮我们在字符串的最后面加一个’/0’。</p>
+<h2 id="字符串的读取："><a href="#字符串的读取：" class="headerlink" title="字符串的读取："></a>字符串的读取：</h2><p>当我们利用scanf读一串字母进字符串数组的时候，通过scanf(“%s”,字符串数组名)的时候，编译器会读到我们输入的空格或者回车后就会停止读取。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/15/%E6%8C%87%E9%92%88%E7%9A%84%E8%BF%90%E7%AE%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -708,70 +769,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%966/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%966/" class="post-title-link" itemprop="url">学习汇编6</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-11-13 09:42:13" itemprop="dateCreated datePublished" datetime="2021-11-13T09:42:13+08:00">2021-11-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-16 19:44:28" itemprop="dateModified" datetime="2021-11-16T19:44:28+08:00">2021-11-16</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="补充：在编译器中编用汇编语言编写代码，最后是以mov-ax-4c00h和int-21h代表代码段结束。"><a href="#补充：在编译器中编用汇编语言编写代码，最后是以mov-ax-4c00h和int-21h代表代码段结束。" class="headerlink" title="补充：在编译器中编用汇编语言编写代码，最后是以mov ax 4c00h和int 21h代表代码段结束。"></a>补充：在编译器中编用汇编语言编写代码，最后是以mov ax 4c00h和int 21h代表代码段结束。</h1><h1 id="前言：介绍在使用编译器编写代码时与debug的不同之处。"><a href="#前言：介绍在使用编译器编写代码时与debug的不同之处。" class="headerlink" title="前言：介绍在使用编译器编写代码时与debug的不同之处。"></a>前言：介绍在使用编译器编写代码时与debug的不同之处。</h1><h1 id="正文：在debug中，我们可以使用mov-ax，-0-代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为-0-的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move-bx-0，然后把这条指令改为move-ax，-bx-，此时就可以将内存单元为-0-的值放入ax中了。"><a href="#正文：在debug中，我们可以使用mov-ax，-0-代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为-0-的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move-bx-0，然后把这条指令改为move-ax，-bx-，此时就可以将内存单元为-0-的值放入ax中了。" class="headerlink" title="正文：在debug中，我们可以使用mov ax，[0]代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为[0]的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move bx 0，然后把这条指令改为move ax，[bx]，此时就可以将内存单元为[0]的值放入ax中了。"></a>正文：在debug中，我们可以使用mov ax，[0]代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为[0]的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move bx 0，然后把这条指令改为move ax，[bx]，此时就可以将内存单元为[0]的值放入ax中了。</h1><h1 id="注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。"><a href="#注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。" class="headerlink" title="注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。"></a>注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -841,7 +838,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
