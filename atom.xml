@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-19T09:05:00.656Z</updated>
+  <updated>2021-12-19T09:21:15.460Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>结构体(2)</title>
+    <link href="http://example.com/2021/12/19/%E7%BB%93%E6%9E%84%E4%BD%93-2/"/>
+    <id>http://example.com/2021/12/19/%E7%BB%93%E6%9E%84%E4%BD%93-2/</id>
+    <published>2021-12-19T09:11:02.000Z</published>
+    <updated>2021-12-19T09:21:15.460Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h1&gt;&lt;p&gt;之前我们定义一个结构体后，如struct Date {int year；int month；int</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>结构体</title>
