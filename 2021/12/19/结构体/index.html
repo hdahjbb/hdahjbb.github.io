@@ -29,8 +29,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s2.loli.net/2021/12/18/eN7jfm2rTXOzLxq.png">
 <meta property="og:image" content="https://s2.loli.net/2021/12/18/zhKr3qtDy9uPmpc.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/19/kJThf5rxNunjPBU.png">
 <meta property="article:published_time" content="2021-12-19T08:43:12.000Z">
-<meta property="article:modified_time" content="2021-12-19T08:43:49.985Z">
+<meta property="article:modified_time" content="2021-12-19T09:05:00.656Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s2.loli.net/2021/12/18/eN7jfm2rTXOzLxq.png">
@@ -178,7 +179,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-19 16:43:12 / Modified: 16:43:49" itemprop="dateCreated datePublished" datetime="2021-12-19T16:43:12+08:00">2021-12-19</time>
+              <time title="Created: 2021-12-19 16:43:12 / Modified: 17:05:00" itemprop="dateCreated datePublished" datetime="2021-12-19T16:43:12+08:00">2021-12-19</time>
             </span>
 
           
@@ -196,7 +197,7 @@
 <h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="定义一个结构体："><a href="#定义一个结构体：" class="headerlink" title="定义一个结构体："></a>定义一个结构体：</h2><p>如图所示：<img src="https://s2.loli.net/2021/12/18/eN7jfm2rTXOzLxq.png" alt="QQ截图20211218171759.png">我们可以通过图中所示三种定义反式定义一个结构体，第一种和第三种是比较常用的。其中point是我们新定义的结构体的类型，p1和p2是变量。</p>
 <h2 id="结构体中的变量的赋值："><a href="#结构体中的变量的赋值：" class="headerlink" title="结构体中的变量的赋值："></a>结构体中的变量的赋值：</h2><p>于是我们就可以对这两个变量进行赋值。比如struct point p1={2，3}。这样子就是把2，3依次赋值给x和y。如果是想要给y赋值而不动x，可以用struct point p1{.y=2}，这样子就可以做到将2赋值给y，而x没有改变。如果在初始化后还想对变量里的值进行修改的话，也可以通过直接p1.y=3从而把p1里的y赋值为3。</p>
 <h2 id="结构的运算："><a href="#结构的运算：" class="headerlink" title="结构的运算："></a>结构的运算：</h2><p><img src="https://s2.loli.net/2021/12/18/zhKr3qtDy9uPmpc.png" alt="QQ截图20211218174156.png">如图所示：我们首先用一个大括号把两个数值放进去，然后在其前面加上一个强制类型转化，转化成我们之前定义的结构体的类型，也就是point型，在赋值给相同类型的p1变量。此时x就等于5，y就等于10。还有p1=p2的写法，得到的就是p1的x和y分别与p2的x和相等。</p>
-<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><p>结构指针和数组指针的区别。我们在定义一个数组的时候，系统会自动将数组名定义成一个指针。而结构指针就必须使用“&amp;”符号，才能够定义一个指针指向结构名。</p>
+<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><p>结构指针和数组指针的区别。我们在定义一个数组的时候，系统会自动将数组名定义成一个指针。而结构指针就必须使用“&amp;”符号，才能够定义一个指针指向结构名。<img src="https://s2.loli.net/2021/12/19/kJThf5rxNunjPBU.png" alt="QQ截图20211219170342.png"></p>
 
     </div>
 
