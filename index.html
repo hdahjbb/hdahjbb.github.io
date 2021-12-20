@@ -148,6 +148,70 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/20/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/20/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F/" class="post-title-link" itemprop="url">全局变量和本地变量</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-20 13:00:01 / Modified: 13:26:29" itemprop="dateCreated datePublished" datetime="2021-12-20T13:00:01+08:00">2021-12-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>本地变量：存在函数内部的变量，调用函数时出现，离开函数时消失。<br>全局变量：定义在函数外部的变量，全局可用。</p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><p>在调用一个全局变量时，如果函数内部有再定义一个与全局变量名相同的变量，那么在函数内部会自动屏蔽全局变量的初始化。</p>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static是一个作用于函数内部，用来保证下一次调用函数时，变量的值是上一次调用时运算完后取得的值。称为静态本地变量。<br>比如：我们定义一个函数  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int a ()</span><br><span class="line">&#123;</span><br><span class="line">static int b=0;</span><br><span class="line">b++;</span><br><span class="line">return b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第一次调用a函数，得到b的值为1，再调用一次a函数，b的值就是2而不是1了。<br>有意思的是，如果你用%p去访问在这个a的地址，会发现它和定义在函数外部的全局变量的地址是挨在一起的。这就说明一点：其实放在函数内部的静态本地变量的性质是一个全局变量，只不过与全局变量不同的对方在于它的作用域只在函数内部，但是生存周期是和全局变量一样的，这也就说明了为什么b会保留上一次调用后取得的值进行下一次的运算。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/19/%E7%BB%93%E6%9E%84%E4%BD%93-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -701,72 +765,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/" class="post-title-link" itemprop="url">学习汇编2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-21 00:11:52 / Modified: 00:16:55" itemprop="dateCreated datePublished" datetime="2021-11-21T00:11:52+08:00">2021-11-21</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。</p>
-<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>如何把10000H放入DS寄存器中？</p>
-<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>上次学的是利用debug的t指令来执行单条指令，而debug执行的第一条指令便是通过CS与IP寄存器加起来索引对应的物理地址，然后执行对应内存当中的指令。穿插一点：上述我们提到了如何将10000H放入DS寄存器中，而根据我所学的8086CPU，指令：move DS 10000H是非法的，必须通过把数据先写进通用寄存器，然后再执行：move DS AX把刚刚写进AX通用寄存器的值写进DS。所以如何解决刚刚提出的问题，就是先运用a指令以汇编指令的形式在内存中写入一条机器指令，首先将第一个内存写入move AX 10000H，再写入move DS AX。然后记下这个内存的物理地址对应的段地址和偏移地址各为多少，用r指令把CS IP里的内容改为刚刚的内存地址，再运行，就可以成功将10000H放入DS啦。</p>
-<h3 id="引申："><a href="#引申：" class="headerlink" title="引申："></a>引申：</h3><p>那么是不是每次debug执行一条指令总是先读取CS和IP对应的内存呢？</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -832,7 +834,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

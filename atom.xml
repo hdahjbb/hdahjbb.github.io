@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-19T09:21:15.460Z</updated>
+  <updated>2021-12-20T05:26:29.591Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>全局变量和本地变量</title>
+    <link href="http://example.com/2021/12/20/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F/"/>
+    <id>http://example.com/2021/12/20/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F/</id>
+    <published>2021-12-20T05:00:01.000Z</published>
+    <updated>2021-12-20T05:26:29.591Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h1&gt;&lt;p&gt;本地变量：存在函数内部的变量，调用函数时出现，离开函数时消失。&lt;br&gt;全局变量：定义在函数外部的变量，全局可用。&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>结构体(2)</title>
@@ -410,28 +432,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;今日学习：汇编语言&quot;&gt;&lt;a href=&quot;#今日学习：汇编语言&quot; class=&quot;headerlink&quot; title=&quot;今日学习：汇编语言&quot;&gt;&lt;/a&gt;今日学习：汇编语言&lt;/h1&gt;&lt;h2 id=&quot;重点内容：&quot;&gt;&lt;a href=&quot;#重点内容：&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>第一篇博客</title>
-    <link href="http://example.com/2021/09/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://example.com/2021/09/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
-    <published>2021-09-22T13:17:19.000Z</published>
-    <updated>2021-09-22T13:59:51.960Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h1&gt;&lt;p&gt;总结一下对于一些代码格式的理解&lt;/p&gt;
-&lt;h1 id=&quot;一：示例&quot;&gt;&lt;a href=&quot;#一：示例&quot;</summary>
         
       
     

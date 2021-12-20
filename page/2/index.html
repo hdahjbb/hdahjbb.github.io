@@ -148,6 +148,68 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/" class="post-title-link" itemprop="url">学习汇编2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-21 00:11:52 / Modified: 00:16:55" itemprop="dateCreated datePublished" datetime="2021-11-21T00:11:52+08:00">2021-11-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>今天看到了一个关于DS寄存器的内容，由于上次学的CS寄存器是默认为段地址，当CPU执行CS寄存器内的语句索引到对应的物理地址并以指令的形式运行。这次看到的是如何将内存的内容与DS寄存器进行交换。</p>
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>如何把10000H放入DS寄存器中？</p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>上次学的是利用debug的t指令来执行单条指令，而debug执行的第一条指令便是通过CS与IP寄存器加起来索引对应的物理地址，然后执行对应内存当中的指令。穿插一点：上述我们提到了如何将10000H放入DS寄存器中，而根据我所学的8086CPU，指令：move DS 10000H是非法的，必须通过把数据先写进通用寄存器，然后再执行：move DS AX把刚刚写进AX通用寄存器的值写进DS。所以如何解决刚刚提出的问题，就是先运用a指令以汇编指令的形式在内存中写入一条机器指令，首先将第一个内存写入move AX 10000H，再写入move DS AX。然后记下这个内存的物理地址对应的段地址和偏移地址各为多少，用r指令把CS IP里的内容改为刚刚的内存地址，再运行，就可以成功将10000H放入DS啦。</p>
+<h3 id="引申："><a href="#引申：" class="headerlink" title="引申："></a>引申：</h3><p>那么是不是每次debug执行一条指令总是先读取CS和IP对应的内存呢？</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%969/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -728,75 +790,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">第一篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-09-22 21:17:19 / Modified: 21:59:51" itemprop="dateCreated datePublished" datetime="2021-09-22T21:17:19+08:00">2021-09-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>总结一下对于一些代码格式的理解</p>
-<h1 id="一：示例"><a href="#一：示例" class="headerlink" title="一：示例"></a>一：示例</h1><p>首先给大家看一下以下一串代码：<br>#include&lt;stdio.h&gt;<br>#include&lt;stdlib.h&gt;<br>int main()<br>{<br>    int a, b, c,volume,r;<br>    printf(“请输入长宽高：”);<br>    r = scanf_s(“%d %d %d”, &amp;a, &amp;b, &amp;c);<br>    if (r == 3 &amp;&amp; a &gt; 0 &amp;&amp; b &gt; 0 &amp;&amp; c &gt; 0)<br>        volume = a * b * c;<br>    else printf(“error\n”);<br>return 0;<br>}</p>
-<p>然后稍微修改一下，如下：<br>#include&lt;stdio.h&gt;<br>#include&lt;stdlib.h&gt;</p>
-<p>int main()<br>{<br>    int a, b, c,volume,r;<br>    printf(“请输入长宽高：”);<br>    r = scanf_s(“%d %d %d”, &amp;a, &amp;b, &amp;c);<br>    if (r == 3 &amp;&amp; a &gt; 0 &amp;&amp; b &gt; 0 &amp;&amp; c &gt; 0)<br>    {<br>        volume = a * b * c;<br>        printf(“体积是:%d\n”, volume);<br>    }<br>    else printf(“error\n”);<br>    return 0;<br>}</p>
-<h1 id="二：区别"><a href="#二：区别" class="headerlink" title="二：区别"></a>二：区别</h1><p>可以看到两串代码中使用(if)的时候，下面那串在if条件下有用到{}这个符号，而上面这一串代码是不需要用到的。</p>
-<h1 id="三：原因"><a href="#三：原因" class="headerlink" title="三：原因"></a>三：原因</h1><p>是因为下面的if条件后面有用到其他的关键字，所以需要用到{}。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>在用到函数的时候，如果函数里面有包含关键字，则需要用到{}，如果没有的话就可以不用。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -862,7 +859,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
