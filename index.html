@@ -148,6 +148,70 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/22/%E8%BF%90%E7%94%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/22/%E8%BF%90%E7%94%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%82%B9/" class="post-title-link" itemprop="url">运用头文件要注意的点</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-22 13:37:36 / Modified: 14:00:57" itemprop="dateCreated datePublished" datetime="2021-12-22T13:37:36+08:00">2021-12-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>我们都知道在预处理命令时是将这个.h文件里面的所有代码插入到这个.c文件中，那么因为像一个结构体不能被定义两次或两次以上诸如此类的原因，我们就需要注意插入时要避免插入两个定义同一个1结构体的事情发生。</p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><p>比如我们在编辑一个max.h文件的时候，定义了一个结构体，然后在另外一个min.h的文件中，加入了这个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;max.h&quot;</span><br></pre></td></tr></table></figure>
+<p>那么这个时候，我们如果在一个.c文件中同时加入了这两个.h的头文件，于是在编译器编译这个.c文件的时候，就会插入这两个.h文件里的所有内容，也就出现了定义两次结构体的情况。<br>所以要避免这种情况的出现，我们可以用到以下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#ifndef XXX</span><br><span class="line">#define XXX</span><br><span class="line">//你写的函数或者其他的东西</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>的预处理命令，来保证不会出现重复的情况。<br>以上三条命令在编译时的作用效果是先判断有没有XXX这个东西，没有的话就define这个东西。这样的话在下次用到这个.h文件的时候，就会进行判断，如果已经有了，就不会重复定义一次，这样也就避免了出现两次重复定义结构体的问题。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/22/%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%8E%E5%A3%B0%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -708,73 +772,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/28/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9611/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/28/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9611/" class="post-title-link" itemprop="url">学习汇编11</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-11-28 11:13:48" itemprop="dateCreated datePublished" datetime="2021-11-28T11:13:48+08:00">2021-11-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-04 13:46:02" itemprop="dateModified" datetime="2021-12-04T13:46:02+08:00">2021-12-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><p>之前讲到在masm编译器中使用move ax，[1]语句其实不是将cs：[1]的数值放进ax，但是如果是pop和push指令是可以做到的。比如pop ax，[1]就是将ss：[1]的数值放入ax中，同理push指令也是相同的效果。</p>
-<h2 id="指令介绍："><a href="#指令介绍：" class="headerlink" title="指令介绍："></a>指令介绍：</h2><h3 id="and："><a href="#and：" class="headerlink" title="and："></a>and：</h3><p>and指令其实就是c语言中的与指令：“&amp;”，and指令在汇编中一般拿来进行位运算，即0100b and 0010b后所得到的值为0000b。</p>
-<h3 id="or："><a href="#or：" class="headerlink" title="or："></a>or：</h3><p>or指令就是c语言中的祸指令：“|”，与and指令相同，一般也是用来进行位运算的，即0001b or 0100b会得到0101b。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -844,7 +841,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

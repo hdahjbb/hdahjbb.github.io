@@ -148,6 +148,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/28/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9611/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/28/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9611/" class="post-title-link" itemprop="url">学习汇编11</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-28 11:13:48" itemprop="dateCreated datePublished" datetime="2021-11-28T11:13:48+08:00">2021-11-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-04 13:46:02" itemprop="dateModified" datetime="2021-12-04T13:46:02+08:00">2021-12-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><p>之前讲到在masm编译器中使用move ax，[1]语句其实不是将cs：[1]的数值放进ax，但是如果是pop和push指令是可以做到的。比如pop ax，[1]就是将ss：[1]的数值放入ax中，同理push指令也是相同的效果。</p>
+<h2 id="指令介绍："><a href="#指令介绍：" class="headerlink" title="指令介绍："></a>指令介绍：</h2><h3 id="and："><a href="#and：" class="headerlink" title="and："></a>and：</h3><p>and指令其实就是c语言中的与指令：“&amp;”，and指令在汇编中一般拿来进行位运算，即0100b and 0010b后所得到的值为0000b。</p>
+<h3 id="or："><a href="#or：" class="headerlink" title="or："></a>or：</h3><p>or指令就是c语言中的祸指令：“|”，与and指令相同，一般也是用来进行位运算的，即0001b or 0100b会得到0101b。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9610/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -714,74 +781,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/31/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%963/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/31/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%963/" class="post-title-link" itemprop="url">学习汇编3</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-31 17:03:50" itemprop="dateCreated datePublished" datetime="2021-10-31T17:03:50+08:00">2021-10-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-21 00:17:33" itemprop="dateModified" datetime="2021-11-21T00:17:33+08:00">2021-11-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>今天初步学习了栈，在这里记录一下对栈的初步理解。</p>
-<h2 id="我对栈的概念的理解："><a href="#我对栈的概念的理解：" class="headerlink" title="我对栈的概念的理解："></a>我对栈的概念的理解：</h2><p>栈是一个人为定义的特殊的内存空间，它与其他内存段不同的主要在于FILO（first in last out），就是先推入栈的值会最后出来，就如同叠书本一样，垫底的是放进去的，最后拿出来的就是那本垫底的，这就是栈与其他内存空间的不同。</p>
-<h2 id="与栈相关的指令："><a href="#与栈相关的指令：" class="headerlink" title="与栈相关的指令："></a>与栈相关的指令：</h2><p>由于是初步学习，所以就只知道push和pop。push就是把数据推入栈，pop就是把栈里的数据拿踩出来。值得注意的是，在push的时候，CPU不是通过CS寄存器寻址，而是通过SS寄存器，与其他段地址寄存器一样，SS也不能直接输入数据，必须通过通用寄存器来交接。<br>以上就是我对栈的初步认识。</p>
-<h2 id="一些其他的知识："><a href="#一些其他的知识：" class="headerlink" title="一些其他的知识："></a>一些其他的知识：</h2><p>当我们格式化硬盘的时候，其实数据并没有抹去，而是改变了CPU的索引，直到下一步操作，新数据覆盖了原有的数据，硬盘里的旧数据才会消失。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -851,7 +850,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
