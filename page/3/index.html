@@ -148,6 +148,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/22/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%961/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/22/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%961/" class="post-title-link" itemprop="url">学习汇编1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-22 21:17:19" itemprop="dateCreated datePublished" datetime="2021-09-22T21:17:19+08:00">2021-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-21 00:21:40" itemprop="dateModified" datetime="2021-11-21T00:21:40+08:00">2021-11-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="今日学习：汇编语言"><a href="#今日学习：汇编语言" class="headerlink" title="今日学习：汇编语言"></a>今日学习：汇编语言</h1><h2 id="重点内容："><a href="#重点内容：" class="headerlink" title="重点内容："></a>重点内容：</h2><p>计算机CPU内使用CS寄存器给的索引地址*16加上IP寄存器给的地址生成一个20位的地址定位到内存的物理地址。</p>
+<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>计算机的外部地址总线的最大寻址能力是20位，而CPU内部只允许通过16位。CPU与外部联系通过三条总线：地址总线，控制总线，数据总线。</p>
+<h3 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h3><p>因此，计算机CPU必须通过两段地址相加从而形成一个20位的地址通过地址总线与外部连接，才可以寻址到对应存储形式为20位的内存段。而计算机的CS与IP寄存器默认存入的16进制数为指令，因此通过CS和IP寄存器用地址总线可以连接内存当中的段并运行指令。计算机会默认把CS寄存器中的数乘上16，相当于从16位变成20位再加上IP寄存器中的值变成一个20位数索引到对应的内存地址，得以运行内存里代码。为什么寻址到相应的段的代码会被当作指令运行呢？因为CPU默认通过CS和IP寄存器寻址到的段里的代码就是要执行的指令而不是数据。</p>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><p>每一次寻址完把指令代码返回给CPU的预处理器以后，CPU中的IP寄存器会自动加上执行过的指令的大小从而达到可以运行下一条命令的效果</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>由于刚接触汇编语言，所以也不太了解，这里只是做一个我自以为的小结。计算机就是通过人为的代码输入转换成一个个对应的功能的计算机语言让CPU执行，之所以指令和数据都是一串串由0和1组成的代码，所以计算机必须通过分工来区分数据和指令。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -278,7 +347,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

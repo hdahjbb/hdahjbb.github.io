@@ -148,6 +148,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/22/%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%8E%E5%A3%B0%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/22/%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%8E%E5%A3%B0%E6%98%8E/" class="post-title-link" itemprop="url">头文件与声明</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-22 10:44:27 / Modified: 13:31:00" itemprop="dateCreated datePublished" datetime="2021-12-22T10:44:27+08:00">2021-12-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>在一个项目下要做到不同的点c文件之间的函数和变量之间相互使用，就需要用到头文件和声明。只有声明才可以放在头文件中。</p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="头文件："><a href="#头文件：" class="headerlink" title="头文件："></a>头文件：</h2><p>比如我们的预处理命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br></pre></td></tr></table></figure>
+<p>这就是一个头文件。就是把stdio.h标准库插入到这一行代码下面，那么在这个.c文件下的函数都可以用到库里所定义的函数。<br>而如果是我们自己想把我们自己定义在其他.c文件里的函数用在同项目的其他.c文件里面的话，我们就需要将这个函数单独创建一个.h文件，然后在需要用到这个函数的.c文件里头，在预处理命令下添加一行预处理命令。<br>比如：我们需要一个比较大小的函数可同时用在多个.c文件里，我们就可以把这个函数定义在我们创建的一个后缀为.h的文件里，比如我们在一个名为max的.h文件中定义了这么一个函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">double max(double a,double b)</span><br><span class="line">&#123;</span><br><span class="line">  double c;</span><br><span class="line">  if(a&gt;b) c=a;</span><br><span class="line">  else c=b;</span><br><span class="line">  return c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者我们已经将这个函数定义在了一个.c文件里，然后在max.h文件下加上函数原型那一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">double max (double a,double b)；</span><br></pre></td></tr></table></figure>
+<p>那么我们就需要在调用到这个函数的.c文件里加上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include&quot;max.h&quot;</span><br></pre></td></tr></table></figure>
+<p>就可以在这个文件里用到max函数了。</p>
+<h2 id="声明："><a href="#声明：" class="headerlink" title="声明："></a>声明：</h2><p>声明并不产生代码，定义才会产生代码。声明仅仅只是告诉函数我有这么一个变量，而且声明一个变量的时候是不可以给其赋值的。具体声明的语法就是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extern int gAll;</span><br></pre></td></tr></table></figure>
+<p>这是在一个.h文件里声明一个名为gAll的全局变量，这个变量在所有包含他所在的.h头文件的.c文件中都可以使用。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/20/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -173,7 +244,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-20 13:00:01 / Modified: 13:26:29" itemprop="dateCreated datePublished" datetime="2021-12-20T13:00:01+08:00">2021-12-20</time>
+              <time title="Created: 2021-12-20 13:00:01 / Modified: 14:06:43" itemprop="dateCreated datePublished" datetime="2021-12-20T13:00:01+08:00">2021-12-20</time>
             </span>
 
           
@@ -704,67 +775,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9610/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/22/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9610/" class="post-title-link" itemprop="url">学习汇编10</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-22 19:27:19 / Modified: 21:07:57" itemprop="dateCreated datePublished" datetime="2021-11-22T19:27:19+08:00">2021-11-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="如何将数据，代码，栈放入不同的段？"><a href="#如何将数据，代码，栈放入不同的段？" class="headerlink" title="如何将数据，代码，栈放入不同的段？"></a>如何将数据，代码，栈放入不同的段？</h1><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>我们在前面讲过一个最基本的用汇编语言编写的程序，在masm编译器中首先用assume cs/ds/ss来告诉编译器接下来的东西是属于数据还是指令。</p>
-<h2 id="回答上面的问题："><a href="#回答上面的问题：" class="headerlink" title="回答上面的问题："></a>回答上面的问题：</h2><p>所以我们如果想要将数据，代码，栈放入不同的段中，就需要assume三个不同的名称的段，然后以下列这种形式来告诉编译器assume cs：code，ds：data，ss：stack，然后此时比如我们需要将一串16进制数存入data段中，我们就在data segment语句下面使用dw指令将一串数字放入，接着跟上data ends表示此段结束，此时编译器会将”data”,”stack”,”code”各翻译成一个地址，然后在后面进入指令开头时可直接用move ax，data语句将data这个地址放入ax中，以此类推达到一个不同段之间互相使用的效果。</p>
-<h2 id="具体示例："><a href="#具体示例：" class="headerlink" title="具体示例："></a>具体示例：</h2><p><img src="https://i.loli.net/2021/11/22/qEuBlmbHNeosiR2.jpg" alt="屏幕截图 2021-11-22 190618.jpg"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -834,7 +844,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
