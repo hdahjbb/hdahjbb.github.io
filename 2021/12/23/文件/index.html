@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="前言：之前我们定义一个结构体后，如struct Date {int year；int month；int day；}date；，此时代表我们定义了一个类型为Date的结构体变量date，但是无论我们用这个date进行赋值或者当作参数传递，又或者是指向一个指针，我们每次用到他的时候都需要把struct Date跟在前面，是不是有点麻烦，这里我们可以用到typedef函数来进行简化。 正文：typed">
+  <meta name="description" content="前言：我们在读取一个文件的时候，可以使用如下几个指令：   1234fopenfscanffcloseFILE * 具体的语法如下： 正文：1FILE *fp 是定义一个叫做fp的指针，用fopen语句打开指定的文件，r的意思是告诉编译器只读的意思，把文件的地址给fp这个指针，然后用if（fp），若这个文件存在，则执行中括号里的语句，fscanf语句是告诉编译器去fp这个文件里找到scanf这个语">
 <meta property="og:type" content="article">
-<meta property="og:title" content="结构体(2)">
-<meta property="og:url" content="http://example.com/2021/12/19/%E7%BB%93%E6%9E%84%E4%BD%93-2/index.html">
+<meta property="og:title" content="文件">
+<meta property="og:url" content="http://example.com/2021/12/23/%E6%96%87%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言：之前我们定义一个结构体后，如struct Date {int year；int month；int day；}date；，此时代表我们定义了一个类型为Date的结构体变量date，但是无论我们用这个date进行赋值或者当作参数传递，又或者是指向一个指针，我们每次用到他的时候都需要把struct Date跟在前面，是不是有点麻烦，这里我们可以用到typedef函数来进行简化。 正文：typed">
+<meta property="og:description" content="前言：我们在读取一个文件的时候，可以使用如下几个指令：   1234fopenfscanffcloseFILE * 具体的语法如下： 正文：1FILE *fp 是定义一个叫做fp的指针，用fopen语句打开指定的文件，r的意思是告诉编译器只读的意思，把文件的地址给fp这个指针，然后用if（fp），若这个文件存在，则执行中括号里的语句，fscanf语句是告诉编译器去fp这个文件里找到scanf这个语">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-12-19T09:11:02.000Z">
-<meta property="article:modified_time" content="2021-12-19T09:21:15.460Z">
+<meta property="og:image" content="https://s2.loli.net/2021/12/23/5Lbtd1eIfAgYy6p.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/23/5LWewDnOk4aQ3Ix.png">
+<meta property="article:published_time" content="2021-12-23T07:47:11.000Z">
+<meta property="article:modified_time" content="2021-12-23T08:06:10.585Z">
 <meta property="article:author" content="骑驴看唱本">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2021/12/23/5Lbtd1eIfAgYy6p.png">
 
-<link rel="canonical" href="http://example.com/2021/12/19/%E7%BB%93%E6%9E%84%E4%BD%93-2/">
+<link rel="canonical" href="http://example.com/2021/12/23/%E6%96%87%E4%BB%B6/">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>结构体(2) | Hexo</title>
+  <title>文件 | Hexo</title>
   
 
 
@@ -151,7 +154,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/19/%E7%BB%93%E6%9E%84%E4%BD%93-2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/23/%E6%96%87%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +167,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          结构体(2)
+          文件
         </h1>
 
         <div class="post-meta">
@@ -175,7 +178,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-12-19 17:11:02 / Modified: 17:21:15" itemprop="dateCreated datePublished" datetime="2021-12-19T17:11:02+08:00">2021-12-19</time>
+              <time title="Created: 2021-12-23 15:47:11 / Modified: 16:06:10" itemprop="dateCreated datePublished" datetime="2021-12-23T15:47:11+08:00">2021-12-23</time>
             </span>
 
           
@@ -189,8 +192,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>之前我们定义一个结构体后，如struct Date {int year；int month；int day；}date；，此时代表我们定义了一个类型为Date的结构体变量date，但是无论我们用这个date进行赋值或者当作参数传递，又或者是指向一个指针，我们每次用到他的时候都需要把struct Date跟在前面，是不是有点麻烦，这里我们可以用到typedef函数来进行简化。</p>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><p>typedef的语法：如“typedef int a；”就是把a当作int使用，所以我们可以先typedef struct Date{int year；int month；int day；} a；将a定义成一个Date的类型，然后a date={2002，6，23}就可以将括号内的值分别赋值给对应的year，month，和day。</p>
+        <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>我们在读取一个文件的时候，可以使用如下几个指令：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fopen</span><br><span class="line">fscanf</span><br><span class="line">fclose</span><br><span class="line">FILE *</span><br></pre></td></tr></table></figure>
+<p>具体的语法如下：<br><img src="https://s2.loli.net/2021/12/23/5Lbtd1eIfAgYy6p.png" alt="QQ截图20211223154408.png"></p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FILE *fp</span><br></pre></td></tr></table></figure>
+<p>是定义一个叫做fp的指针，用fopen语句打开指定的文件，r的意思是告诉编译器只读的意思，把文件的地址给fp这个指针，然后用if（fp），若这个文件存在，则执行中括号里的语句，fscanf语句是告诉编译器去fp这个文件里找到scanf这个语句，找到后把num的值输出，最后fclose这个文件。</p>
+<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><p>fopen指令可传递参数，上图就是前面是一个文件名，后面的字符串“r”是表示只读的意思，除了r，还有其他的字符串表示其他的意思。<br><img src="https://s2.loli.net/2021/12/23/5LWewDnOk4aQ3Ix.png" alt="QQ截图20211223160024.png"><br>w+与r+的区别在于w+可以读入你改写的东西，a追加的意思主要用于从文件尾加入东西。</p>
 
     </div>
 
@@ -225,13 +232,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/19/%E7%BB%93%E6%9E%84%E4%BD%93/" rel="prev" title="结构体">
-      <i class="fa fa-chevron-left"></i> 结构体
+    <a href="/2021/12/22/%E8%BF%90%E7%94%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%82%B9/" rel="prev" title="运用头文件要注意的点">
+      <i class="fa fa-chevron-left"></i> 运用头文件要注意的点
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/12/20/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F/" rel="next" title="全局变量和本地变量">
-      全局变量和本地变量 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -290,7 +294,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">正文：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">正文：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">补充：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

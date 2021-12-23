@@ -148,6 +148,70 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/23/%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="骑驴看唱本">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/23/%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-23 15:47:11 / Modified: 16:06:10" itemprop="dateCreated datePublished" datetime="2021-12-23T15:47:11+08:00">2021-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>我们在读取一个文件的时候，可以使用如下几个指令：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fopen</span><br><span class="line">fscanf</span><br><span class="line">fclose</span><br><span class="line">FILE *</span><br></pre></td></tr></table></figure>
+<p>具体的语法如下：<br><img src="https://s2.loli.net/2021/12/23/5Lbtd1eIfAgYy6p.png" alt="QQ截图20211223154408.png"></p>
+<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FILE *fp</span><br></pre></td></tr></table></figure>
+<p>是定义一个叫做fp的指针，用fopen语句打开指定的文件，r的意思是告诉编译器只读的意思，把文件的地址给fp这个指针，然后用if（fp），若这个文件存在，则执行中括号里的语句，fscanf语句是告诉编译器去fp这个文件里找到scanf这个语句，找到后把num的值输出，最后fclose这个文件。</p>
+<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><p>fopen指令可传递参数，上图就是前面是一个文件名，后面的字符串“r”是表示只读的意思，除了r，还有其他的字符串表示其他的意思。<br><img src="https://s2.loli.net/2021/12/23/5LWewDnOk4aQ3Ix.png" alt="QQ截图20211223160024.png"><br>w+与r+的区别在于w+可以读入你改写的东西，a追加的意思主要用于从文件尾加入东西。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/22/%E8%BF%90%E7%94%A8%E5%A4%B4%E6%96%87%E4%BB%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -710,68 +774,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/13/%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%8C%87%E9%92%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="骑驴看唱本">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/13/%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%8C%87%E9%92%88/" class="post-title-link" itemprop="url">初步认识指针</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-13 18:48:34 / Modified: 19:14:01" itemprop="dateCreated datePublished" datetime="2021-12-13T18:48:34+08:00">2021-12-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>学久了c语言，很自然的将“scanf”函数的用法格式死记硬背住，但是并不了解其中“&amp;”的作用，之前一度认为是一个与“=”相同的作用，就是scanf（“”）；双引号里面的东西赋值给“&amp;”后面的变量，其实“&amp;”符号确实与“=”符号一样也是运算符，接下来就谈谈对这个符号的初步认识。</p>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="指针的含义"><a href="#指针的含义" class="headerlink" title="指针的含义"></a>指针的含义</h2><p>指针其实就是一个拿来存放另外一个变量地址的变量。int <em>p就是定义一个指针变量的名称叫做p，</em>的含义就是告诉编译器此时定义的指针是一个变量。</p>
-<h2 id="说说“-amp-”符号与指针的缘分"><a href="#说说“-amp-”符号与指针的缘分" class="headerlink" title="说说“&amp;”符号与指针的缘分"></a>说说“&amp;”符号与指针的缘分</h2><p>在“scanf”函数中，“&amp;”的作用就是把它后面的那个变量转化成一个地址来存放我们输入的数值。那么与上文对指针的了解，是不是会有这么一个问题：如果说指针只是拿来存放一个变量的地址，那是不是我们可以这样子：“int b=（int）&amp;a”。这样子的话不就相当于用“&amp;”符号把a这个变量的地址存入b这个变量里面，作用效果不就与指针的作用相同了吗？但是，需要注意一点，int型的变量只能存储4个字节的数据，而不是所有的编译器都是使用32位的，当a这个变量的地址不是32位，那么刚刚上面那个直接把地址强制转化为int型的就不成立了，所以此时就引入了指针的用法。我们在定义指针的时候才可以这么写：int *p=&amp;a；此格式按照我的理解就是先定义一个指针p，然后把a这个变量的地址放入这个指针变量中，如果此时你使用printf(“%p”,p)就会输出a的地址。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>这里初认识指针只讲了指针的一小个作用，就是克服另外一个变量的地址存储问题，其实指针的用处远远不只这些。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -841,7 +843,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

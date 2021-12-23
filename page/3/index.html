@@ -148,6 +148,64 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/07/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%964/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="骑驴看唱本">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/07/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%964/" class="post-title-link" itemprop="url">学习汇编4</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-07 13:20:29 / Modified: 18:18:36" itemprop="dateCreated datePublished" datetime="2021-11-07T13:20:29+08:00">2021-11-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="汇编指令：assume-segment"><a href="#汇编指令：assume-segment" class="headerlink" title="汇编指令：assume segment"></a>汇编指令：assume segment</h1><h1 id="引言："><a href="#引言：" class="headerlink" title="引言："></a>引言：</h1><h3 id="上一篇说到CPU是根据寄存器来判别索引到的地址内存的是数据还是指令，那如何让CPU按照我们的想法去工作呢？这边就涉及到了“伪指令，指令，源程序，程序”的概念。"><a href="#上一篇说到CPU是根据寄存器来判别索引到的地址内存的是数据还是指令，那如何让CPU按照我们的想法去工作呢？这边就涉及到了“伪指令，指令，源程序，程序”的概念。" class="headerlink" title="上一篇说到CPU是根据寄存器来判别索引到的地址内存的是数据还是指令，那如何让CPU按照我们的想法去工作呢？这边就涉及到了“伪指令，指令，源程序，程序”的概念。"></a>上一篇说到CPU是根据寄存器来判别索引到的地址内存的是数据还是指令，那如何让CPU按照我们的想法去工作呢？这边就涉及到了“伪指令，指令，源程序，程序”的概念。</h3><h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><h3 id="源程序：指一个可执行文件内的所有内容。"><a href="#源程序：指一个可执行文件内的所有内容。" class="headerlink" title="源程序：指一个可执行文件内的所有内容。"></a>源程序：指一个可执行文件内的所有内容。</h3><h3 id="程序：源程序中可翻译成机器语言的部分指令。"><a href="#程序：源程序中可翻译成机器语言的部分指令。" class="headerlink" title="程序：源程序中可翻译成机器语言的部分指令。"></a>程序：源程序中可翻译成机器语言的部分指令。</h3><h3 id="指令：指能够转化为机器语言让计算机工作的程序。"><a href="#指令：指能够转化为机器语言让计算机工作的程序。" class="headerlink" title="指令：指能够转化为机器语言让计算机工作的程序。"></a>指令：指能够转化为机器语言让计算机工作的程序。</h3><h3 id="伪指令：指除指令外不能翻译为机器语言的所有程序。"><a href="#伪指令：指除指令外不能翻译为机器语言的所有程序。" class="headerlink" title="伪指令：指除指令外不能翻译为机器语言的所有程序。"></a>伪指令：指除指令外不能翻译为机器语言的所有程序。</h3><h2 id="说白了就是编译器编译完源程序，将其中的指令转化为二进制形成一个程序。"><a href="#说白了就是编译器编译完源程序，将其中的指令转化为二进制形成一个程序。" class="headerlink" title="说白了就是编译器编译完源程序，将其中的指令转化为二进制形成一个程序。"></a>说白了就是编译器编译完源程序，将其中的指令转化为二进制形成一个程序。</h2><h1 id="工作原理：‘"><a href="#工作原理：‘" class="headerlink" title="工作原理：‘"></a>工作原理：‘</h1><h3 id="在编译器中使用assume：cs，告诉编译器以下代码直至ends的段为指令段。XXX-segment为这个段的命名，同时还有一个作用，编译器会将XXX变为一个地址当作这个段的头地址。直到ends出现表明这个代码段结束。最后以end结束，把控制权交回给操作系统。"><a href="#在编译器中使用assume：cs，告诉编译器以下代码直至ends的段为指令段。XXX-segment为这个段的命名，同时还有一个作用，编译器会将XXX变为一个地址当作这个段的头地址。直到ends出现表明这个代码段结束。最后以end结束，把控制权交回给操作系统。" class="headerlink" title="在编译器中使用assume：cs，告诉编译器以下代码直至ends的段为指令段。XXX segment为这个段的命名，同时还有一个作用，编译器会将XXX变为一个地址当作这个段的头地址。直到ends出现表明这个代码段结束。最后以end结束，把控制权交回给操作系统。"></a>在编译器中使用assume：cs，告诉编译器以下代码直至ends的段为指令段。XXX segment为这个段的命名，同时还有一个作用，编译器会将XXX变为一个地址当作这个段的头地址。直到ends出现表明这个代码段结束。最后以end结束，把控制权交回给操作系统。</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/31/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%963/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -415,7 +473,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
