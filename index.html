@@ -148,6 +148,78 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/25/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9612/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="骑驴看唱本">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/25/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9612/" class="post-title-link" itemprop="url">学习汇编12</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-25 17:25:07 / Modified: 18:52:45" itemprop="dateCreated datePublished" datetime="2021-12-25T17:25:07+08:00">2021-12-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>在c语言中，我们在进行变量替换的时候，通常需要引入第三个变量，先把第一个变量的值给第三个变量，再把第二个变量的值给第一个，最后再把第三个变量的值给第二个，这就执行了一个变量交换的程序。但是在汇编语言中，我们一般是利用几个寄存器实现变量替换。但是寄存器数量是有限的，如果在大一点的程序里面的话，不能保证我们所用到的寄存器此时是否正在工作，所以我们可以通过栈这一特殊的内存空间实现c语言中第三个变量的作用。</p>
+<h2 id="栈的作用："><a href="#栈的作用：" class="headerlink" title="栈的作用："></a>栈的作用：</h2><p>比如当我们在使用汇编语言进行循环嵌套的时候，loop指令与cx挂钩，但是如果我们在外部循环设置了cx的值，但是在进行内部循环的时候，我们也用到了loop，那么我们就需要再设置cx的值给内部循环使用，但是这样的话当内部嵌套的循环执行完后cx的值已经不是刚刚外部循环所设定的值了，这个时候我们就可以在进入第一层循环的时候，开辟一个栈空间，然后，push cx，当内层循环执行完后，cx的值应该为0.此时再pop cx就重新把栈里的数给回cx了。</p>
+<h2 id="可以使用-…-寻址的寄存器"><a href="#可以使用-…-寻址的寄存器" class="headerlink" title="可以使用[…]寻址的寄存器"></a>可以使用[…]寻址的寄存器</h2><p>我们在前面说到，在访问一个地址的时候，我们需要这个物理地址的段地址和偏移地址，而这个段地址默认存在ds中，所以我们访问一个物理地址的语法格式是，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ax，[bx]</span><br></pre></td></tr></table></figure>
+<p>这条语句的作用把ds：[dx]的值放入ax这个寄存器中，因为在编译器里，我们不能使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">move ax,[0]</span><br></pre></td></tr></table></figure>
+<p>的形式，因为这样在编译的时候不是把ds：0的值写入ax，而是把0写入ax，但是要注意的是，不是所有的寄存器都可以以[…]的形式定位地址。<br>在8086cpu中，只有4个寄存器可以使用这个格式，为：bx,si,di,bp。除了这四个以外，其他寄存器没有使用这个格式的规范。而且，在中括号里，只有四种组合是允许的，分别为bx和si，bx和di，bp和si，bp和di，所以，像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[bx+bp]</span><br><span class="line">mov ax,[si+di]</span><br></pre></td></tr></table></figure>
+<p>是不被允许的。</p>
+<h2 id="bp寄存器："><a href="#bp寄存器：" class="headerlink" title="bp寄存器："></a>bp寄存器：</h2><p>bp寄存器与其他通用寄存器的区别在于，在使用像bx此类寄存器，段地址默认在ds中，而使用bp的时候，如果没有指明的话，段地址就默认在ss中。</p>
+<h2 id="如果没有寄存器参与寻址呢？"><a href="#如果没有寄存器参与寻址呢？" class="headerlink" title="如果没有寄存器参与寻址呢？"></a>如果没有寄存器参与寻址呢？</h2><p>在前面我们寻址或者赋值的时候，都是把值存入寄存器当中，那么也就有一个类型匹配的问题，如ax，bx等寄存器都是16位寄存器，所以可以直接传值，但是如果我们没有用到寄存器呢？这里就引入了ptr指令。</p>
+<h3 id="ptr指令。"><a href="#ptr指令。" class="headerlink" title="ptr指令。"></a>ptr指令。</h3><p>ptr指令是用于在传递数值或者寻址的时候，由于没有寄存器的参与，来指定以字型或是字节型等操作的指令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ax,ds:[0]</span><br></pre></td></tr></table></figure>
+<p>就是把ds：[0]这个内存单元的值，以一个字的形式放入bx，那么有什么用呢？<br>比如我们在ds:[0]这个单元中存放的是十六进制的ff，如果我们以一个字节的形式给他加1的话，这个单元的数值就会溢出，也就是没得进位，但是如果以字的形式进行操作的话就是把00ffh加1，那就可以进位变成0100h了。<br>而像push和pop指令，就只以字的形式传输。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/23/%E6%96%87%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -727,73 +799,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/15/%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%8C%87%E9%92%88%EF%BC%882%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="骑驴看唱本">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/15/%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%8C%87%E9%92%88%EF%BC%882%EF%BC%89/" class="post-title-link" itemprop="url">初步认识指针（2）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-15 15:00:19" itemprop="dateCreated datePublished" datetime="2021-12-15T15:00:19+08:00">2021-12-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-25 17:00:08" itemprop="dateModified" datetime="2021-12-25T17:00:08+08:00">2021-12-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>继上次的初步认识指针，这次说到的指针的作用可以用于数组之间的传递，和函数之间的传递。</p>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><p>先看这样一个图片：<br><img src="https://s2.loli.net/2021/12/15/nJyLENBYWjugikr.png" alt="QQ截图20211213183332.png"><br>从图片里我们可以看到输出a[0]和a的地址是相同的。<br>然后需要知道一点就是当我们用到函数的时候，有些时候是不能直接把实参传递给形参的，比如我们不能将一个数组直接传递到函数里面让其运行。像下面这样子：sum(a[100])，这样子是程序不允许的，但是我们将这个函数改写成sum(*p),然后在外面定义一个指针int *p=a[100]，或者是直接sum(a)就行了，其实是因为我们在定义一个数组a[100]的时候，编译器直接将a定义为一个指针，a的地址就是a[0]的地址，但是需要注意的是这个字符串数组名是一个指针常量，并非指针变量。因为上面我们看到只输出一个a变量的地址与a[0]这个数组所得到的结果是一样的，所以这两种转化而来的类型就都行得通了。所以指针的优点也在于可以将一个实参传递给形参。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>这里我们讨论了指针的另外一个作用，就是用指针来存储数组，然后用指针来传递数组。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -863,7 +868,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

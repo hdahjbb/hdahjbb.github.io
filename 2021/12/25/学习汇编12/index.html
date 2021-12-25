@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="补充：1：在使用一段可执行文件时，我们需要注意用到的内存单元是否已经存在其他数据，如果是操作系统的数据，有可能会让操作系统崩溃，所以我们需要有一段安全的内存空间供我们试验。在一般的pc机中，DOS方式下，DOS和其他合法的程序一般都不会使用0：200h~0:2ffh的256个字节的空间，所以，这段内存是安全的。 2：一个简单的汇编语言的代码开头是assume cs:XXX,这个XXX是随意命名的，">
+  <meta name="description" content="前言：在c语言中，我们在进行变量替换的时候，通常需要引入第三个变量，先把第一个变量的值给第三个变量，再把第二个变量的值给第一个，最后再把第三个变量的值给第二个，这就执行了一个变量交换的程序。但是在汇编语言中，我们一般是利用几个寄存器实现变量替换。但是寄存器数量是有限的，如果在大一点的程序里面的话，不能保证我们所用到的寄存器此时是否正在工作，所以我们可以通过栈这一特殊的内存空间实现c语言中第三个变量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习汇编9">
-<meta property="og:url" content="http://example.com/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%969/index.html">
+<meta property="og:title" content="学习汇编12">
+<meta property="og:url" content="http://example.com/2021/12/25/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9612/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="补充：1：在使用一段可执行文件时，我们需要注意用到的内存单元是否已经存在其他数据，如果是操作系统的数据，有可能会让操作系统崩溃，所以我们需要有一段安全的内存空间供我们试验。在一般的pc机中，DOS方式下，DOS和其他合法的程序一般都不会使用0：200h~0:2ffh的256个字节的空间，所以，这段内存是安全的。 2：一个简单的汇编语言的代码开头是assume cs:XXX,这个XXX是随意命名的，">
+<meta property="og:description" content="前言：在c语言中，我们在进行变量替换的时候，通常需要引入第三个变量，先把第一个变量的值给第三个变量，再把第二个变量的值给第一个，最后再把第三个变量的值给第二个，这就执行了一个变量交换的程序。但是在汇编语言中，我们一般是利用几个寄存器实现变量替换。但是寄存器数量是有限的，如果在大一点的程序里面的话，不能保证我们所用到的寄存器此时是否正在工作，所以我们可以通过栈这一特殊的内存空间实现c语言中第三个变量">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-16T12:07:35.000Z">
-<meta property="article:modified_time" content="2021-11-17T07:31:44.302Z">
+<meta property="article:published_time" content="2021-12-25T09:25:07.000Z">
+<meta property="article:modified_time" content="2021-12-25T10:52:45.975Z">
 <meta property="article:author" content="骑驴看唱本">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%969/">
+<link rel="canonical" href="http://example.com/2021/12/25/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9612/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>学习汇编9 | Hexo</title>
+  <title>学习汇编12 | Hexo</title>
   
 
 
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%969/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/25/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9612/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          学习汇编9
+          学习汇编12
         </h1>
 
         <div class="post-meta">
@@ -173,16 +173,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-11-16 20:07:35" itemprop="dateCreated datePublished" datetime="2021-11-16T20:07:35+08:00">2021-11-16</time>
+              <time title="Created: 2021-12-25 17:25:07 / Modified: 18:52:45" itemprop="dateCreated datePublished" datetime="2021-12-25T17:25:07+08:00">2021-12-25</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-17 15:31:44" itemprop="dateModified" datetime="2021-11-17T15:31:44+08:00">2021-11-17</time>
-              </span>
 
           
 
@@ -195,10 +189,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><h3 id="1："><a href="#1：" class="headerlink" title="1："></a>1：</h3><p>在使用一段可执行文件时，我们需要注意用到的内存单元是否已经存在其他数据，如果是操作系统的数据，有可能会让操作系统崩溃，所以我们需要有一段安全的内存空间供我们试验。在一般的pc机中，DOS方式下，DOS和其他合法的程序一般都不会使用0：200h~0:2ffh的256个字节的空间，所以，这段内存是安全的。</p>
-<h3 id="2："><a href="#2：" class="headerlink" title="2："></a>2：</h3><p>一个简单的汇编语言的代码开头是assume cs:XXX,这个XXX是随意命名的，编译器会自动把XXX变成一个偏移地址，表示使CPU指向cs：XXX这个物理地址，并将里面的代码以指令的形式执行，然后XXX segment，接着就是以汇编语言形式编写的代码，最后再加上move ax，4c00h和int 21h结尾操作权交回给操作系统，然后以XXX ends证明cs：XXX这段代码到此结束，再一个end说明这一整个程序结束了，且end还有一个作用是告诉编译器开头在哪里。</p>
-<h3 id="3："><a href="#3：" class="headerlink" title="3："></a>3：</h3><p>dw伪指令和db伪指令：dw伪指令可以用来将字型数据写入段的开头，在一段简单代码中，我们可以在assume cs：XXX和XXX segment后使用dw CCCCh，QQQQh，WWWWh将数据写入这段地址的开头（CCCCh，QQQQh，WWWWh等表示任意四个十六进制数）。db伪指令跟dw伪指令的区别只在于定义的是字节型数据。</p>
-<h3 id="4："><a href="#4：" class="headerlink" title="4："></a>4：</h3><p>一段程序中需要定义一个开头，也就是说在真正的指令前加上一个自己命名的开头，然后加上冒号“：”最后在end后加上这个自己定义的开头，因为如果不定义开头，cpu会把其他的伪指令也翻译成二进制的机器指令并执行。</p>
+        <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>在c语言中，我们在进行变量替换的时候，通常需要引入第三个变量，先把第一个变量的值给第三个变量，再把第二个变量的值给第一个，最后再把第三个变量的值给第二个，这就执行了一个变量交换的程序。但是在汇编语言中，我们一般是利用几个寄存器实现变量替换。但是寄存器数量是有限的，如果在大一点的程序里面的话，不能保证我们所用到的寄存器此时是否正在工作，所以我们可以通过栈这一特殊的内存空间实现c语言中第三个变量的作用。</p>
+<h2 id="栈的作用："><a href="#栈的作用：" class="headerlink" title="栈的作用："></a>栈的作用：</h2><p>比如当我们在使用汇编语言进行循环嵌套的时候，loop指令与cx挂钩，但是如果我们在外部循环设置了cx的值，但是在进行内部循环的时候，我们也用到了loop，那么我们就需要再设置cx的值给内部循环使用，但是这样的话当内部嵌套的循环执行完后cx的值已经不是刚刚外部循环所设定的值了，这个时候我们就可以在进入第一层循环的时候，开辟一个栈空间，然后，push cx，当内层循环执行完后，cx的值应该为0.此时再pop cx就重新把栈里的数给回cx了。</p>
+<h2 id="可以使用-…-寻址的寄存器"><a href="#可以使用-…-寻址的寄存器" class="headerlink" title="可以使用[…]寻址的寄存器"></a>可以使用[…]寻址的寄存器</h2><p>我们在前面说到，在访问一个地址的时候，我们需要这个物理地址的段地址和偏移地址，而这个段地址默认存在ds中，所以我们访问一个物理地址的语法格式是，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ax，[bx]</span><br></pre></td></tr></table></figure>
+<p>这条语句的作用把ds：[dx]的值放入ax这个寄存器中，因为在编译器里，我们不能使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">move ax,[0]</span><br></pre></td></tr></table></figure>
+<p>的形式，因为这样在编译的时候不是把ds：0的值写入ax，而是把0写入ax，但是要注意的是，不是所有的寄存器都可以以[…]的形式定位地址。<br>在8086cpu中，只有4个寄存器可以使用这个格式，为：bx,si,di,bp。除了这四个以外，其他寄存器没有使用这个格式的规范。而且，在中括号里，只有四种组合是允许的，分别为bx和si，bx和di，bp和si，bp和di，所以，像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[bx+bp]</span><br><span class="line">mov ax,[si+di]</span><br></pre></td></tr></table></figure>
+<p>是不被允许的。</p>
+<h2 id="bp寄存器："><a href="#bp寄存器：" class="headerlink" title="bp寄存器："></a>bp寄存器：</h2><p>bp寄存器与其他通用寄存器的区别在于，在使用像bx此类寄存器，段地址默认在ds中，而使用bp的时候，如果没有指明的话，段地址就默认在ss中。</p>
+<h2 id="如果没有寄存器参与寻址呢？"><a href="#如果没有寄存器参与寻址呢？" class="headerlink" title="如果没有寄存器参与寻址呢？"></a>如果没有寄存器参与寻址呢？</h2><p>在前面我们寻址或者赋值的时候，都是把值存入寄存器当中，那么也就有一个类型匹配的问题，如ax，bx等寄存器都是16位寄存器，所以可以直接传值，但是如果我们没有用到寄存器呢？这里就引入了ptr指令。</p>
+<h3 id="ptr指令。"><a href="#ptr指令。" class="headerlink" title="ptr指令。"></a>ptr指令。</h3><p>ptr指令是用于在传递数值或者寻址的时候，由于没有寄存器的参与，来指定以字型或是字节型等操作的指令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ax,ds:[0]</span><br></pre></td></tr></table></figure>
+<p>就是把ds：[0]这个内存单元的值，以一个字的形式放入bx，那么有什么用呢？<br>比如我们在ds:[0]这个单元中存放的是十六进制的ff，如果我们以一个字节的形式给他加1的话，这个单元的数值就会溢出，也就是没得进位，但是如果以字的形式进行操作的话就是把00ffh加1，那就可以进位变成0100h了。<br>而像push和pop指令，就只以字的形式传输。</p>
 
     </div>
 
@@ -233,13 +237,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/16/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%968/" rel="prev" title="学习汇编8">
-      <i class="fa fa-chevron-left"></i> 学习汇编8
+    <a href="/2021/12/23/%E6%96%87%E4%BB%B6/" rel="prev" title="文件">
+      <i class="fa fa-chevron-left"></i> 文件
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/11/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%962/" rel="next" title="学习汇编2">
-      学习汇编2 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -298,7 +299,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">补充：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%BC%9A"><span class="nav-number">1.0.1.</span> <span class="nav-text">1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%9A"><span class="nav-number">1.0.2.</span> <span class="nav-text">2：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%EF%BC%9A"><span class="nav-number">1.0.3.</span> <span class="nav-text">3：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%EF%BC%9A"><span class="nav-number">1.0.4.</span> <span class="nav-text">4：</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">栈的作用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-%E2%80%A6-%E5%AF%BB%E5%9D%80%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">1.2.</span> <span class="nav-text">可以使用[…]寻址的寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bp%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">bp寄存器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E5%AF%84%E5%AD%98%E5%99%A8%E5%8F%82%E4%B8%8E%E5%AF%BB%E5%9D%80%E5%91%A2%EF%BC%9F"><span class="nav-number">1.4.</span> <span class="nav-text">如果没有寄存器参与寻址呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ptr%E6%8C%87%E4%BB%A4%E3%80%82"><span class="nav-number">1.4.1.</span> <span class="nav-text">ptr指令。</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
