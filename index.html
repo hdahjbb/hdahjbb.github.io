@@ -148,6 +148,130 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/26/PHP%E5%BC%95%E7%94%A8%E4%BC%A0%E5%80%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="骑驴看唱本">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/26/PHP%E5%BC%95%E7%94%A8%E4%BC%A0%E5%80%BC/" class="post-title-link" itemprop="url">PHP引用传值</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-26 15:08:13 / Modified: 15:18:37" itemprop="dateCreated datePublished" datetime="2022-02-26T15:08:13+08:00">2022-02-26</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>引用传值主要是体现在函数的调用上，具体功能与c语言中的函数指针类似。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>在PHP中定义一个新函数的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fuction xxx(xxx为函数名)(形参1，形参2)&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候我们调用函数时传入的实参会变成函数的形参，从而作用域只在函数内部。如果我们需要实参随着函数的运行而运行，那么可以在形参前加上一个取地址符，具体如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fuction xxx(&amp;形参1，&amp;形参2）&#123;</span><br><span class="line">函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时传入函数的实参，也就是传入的两个变量之后的值就会等于函数运算后得到的值。<br>原理就是和c语言中指针的效果相同，因为加上取地址符，所以传入的是这个变量所对应的地址，从而改变这个内存地址上的值。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9613/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="骑驴看唱本">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/21/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9613/" class="post-title-link" itemprop="url">学习汇编13</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-21 15:14:07 / Modified: 15:15:47" itemprop="dateCreated datePublished" datetime="2022-01-21T15:14:07+08:00">2022-01-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>基于8086cpu</p>
+<h1 id="指令："><a href="#指令：" class="headerlink" title="指令："></a>指令：</h1><h2 id="div："><a href="#div：" class="headerlink" title="div："></a>div：</h2><p>div指令相当于四则运算的除号</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/25/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%9612/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -663,142 +787,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/18/%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A4%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="骑驴看唱本">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/18/%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A4%E8%AF%86/" class="post-title-link" itemprop="url">对字符串的认识</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-18 15:53:14" itemprop="dateCreated datePublished" datetime="2021-12-18T15:53:14+08:00">2021-12-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-25 09:55:04" itemprop="dateModified" datetime="2021-12-25T09:55:04+08:00">2021-12-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>学完了指针然后再重新看一遍字符串，才知道其实字符串也是一个数组，就是一个char型的数组里面存储一串字符。用%s来读取和输出。</p>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="定义字符串："><a href="#定义字符串：" class="headerlink" title="定义字符串："></a>定义字符串：</h2><p>我们用%c来表示字符，但是仅仅只是一个字符，就如同一个数字单独存在那边，但是有的时候我们需要一个单词的运算：如输入或者输出。这个时候就需要字符串，说白了就是一个个字符组成的一个变量，那么我们就需要用到数组，在数组的每一个字节空间里面存一个字母，然后输出这个数组就成了一个字符串。而我们在学习函数的时候，知道数组产生以后，他的数组名都会被初始化成一个指针，与数组的第一个元素的地址一样，所以当我们在定义一个字符串数组的时候也可以利用指针的形式来存储。所以我们可以这样子定义一个字符串数组：char string[10]=”HELLO”或者char *string=”HELLO”,但是无论是这两种的哪一种，系统都将会帮我们在字符串的最后面加一个’/0’。</p>
-<h2 id="字符串的读取："><a href="#字符串的读取：" class="headerlink" title="字符串的读取："></a>字符串的读取：</h2><p>当我们利用scanf读一串字母进字符串数组的时候，通过scanf(“%s”,字符串数组名)的时候，编译器会读到我们输入的空格或者回车后就会停止读取。<img src="https://s2.loli.net/2021/12/24/yzAq4sKJgeEQuHd.png" alt="QQ截图20211224180146.png"></p>
-<h1 id="补充：空字符串"><a href="#补充：空字符串" class="headerlink" title="补充：空字符串"></a>补充：空字符串</h1><p><img src="https://s2.loli.net/2021/12/24/wymKJPQZjGaVSbg.png" alt="QQ截图20211224180700.png"><br>当我们定义一个字符串为空字符串时，可以在字符串里加上’\0’来说明。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">char a[100]=&#123;&#x27;\0&#x27;&#125;;</span><br></pre></td></tr></table></figure>
-<p>此代码的意思是开辟一个字符串数组，而且把字符串里的每个值都初始化为0。</p>
-<h1 id="补充2："><a href="#补充2：" class="headerlink" title="补充2："></a>补充2：</h1><p>当我们要对一个字符串进行输入时，不妨采用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get(字符串名)；</span><br></pre></td></tr></table></figure>
-<p>的用法，这个语句可以从键盘上读入数据直至回车，可避免scanf语句读到空格就停止的情况，若把scanf和gets连用，则要注意在使用完scanf后，在缓冲区留下了一个换行符，可使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while(getchar()!=&#x27;\n&#x27;);</span><br></pre></td></tr></table></figure>
-<p>将缓冲区的换行符读掉。<br>gets和scanf还有一点差别就是gets会带着换行符返回，而scanf会把换行符留在缓冲区。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/15/%E6%8C%87%E9%92%88%E7%9A%84%E8%BF%90%E7%AE%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="骑驴看唱本">
-      <meta itemprop="description" content="爱拼才会赢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/15/%E6%8C%87%E9%92%88%E7%9A%84%E8%BF%90%E7%AE%97/" class="post-title-link" itemprop="url">指针的运算</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-12-15 16:03:59 / Modified: 16:53:55" itemprop="dateCreated datePublished" datetime="2021-12-15T16:03:59+08:00">2021-12-15</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>我们经常会看到p++，p–，p1-p，p2-p1等对指针的运算，以下介绍的就是关于指针的运算。</p>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><h2 id="两个指针之间的相加减："><a href="#两个指针之间的相加减：" class="headerlink" title="两个指针之间的相加减："></a>两个指针之间的相加减：</h2><p><img src="https://s2.loli.net/2021/12/15/xa7FLqT9SpKVQ1o.png" alt="QQ截图20211215160507.png"><br>如图是两个指针之间的相加减：p1-p=5，q1-q=6，q的地址不是0xbff11d28，q1的地址不是0xbff11d40吗？按照16进制的算法不应该是等于24吗？为什么等于6呢，这里面是不是有什么猫腻，细心的你会发现24/4刚好等于6，而4刚好就是q指针类型的大小。所以两个指针相减得到的是这两个指针之间有几个同类型的个数。</p>
-<h1 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h1><p>指针有一个作用：动态分配内存。如图所示：<img src="https://s2.loli.net/2021/12/15/y9VKG4xcj3AD2qY.png" alt="QQ截图20211215164522.png"><br>在c99以前的编译器没有执行自动分组的代码，所以需要运用malloc函数给一个变量分配一块存储空间，然后再根据我们想要的使他以那个类型在作用。最后通过free(变量)将内存空间还回去即可。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -868,7 +856,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -896,7 +884,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -148,6 +148,128 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%966/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="骑驴看唱本">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%966/" class="post-title-link" itemprop="url">学习汇编6</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-13 09:42:13" itemprop="dateCreated datePublished" datetime="2021-11-13T09:42:13+08:00">2021-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-16 19:44:28" itemprop="dateModified" datetime="2021-11-16T19:44:28+08:00">2021-11-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="补充：在编译器中编用汇编语言编写代码，最后是以mov-ax-4c00h和int-21h代表代码段结束。"><a href="#补充：在编译器中编用汇编语言编写代码，最后是以mov-ax-4c00h和int-21h代表代码段结束。" class="headerlink" title="补充：在编译器中编用汇编语言编写代码，最后是以mov ax 4c00h和int 21h代表代码段结束。"></a>补充：在编译器中编用汇编语言编写代码，最后是以mov ax 4c00h和int 21h代表代码段结束。</h1><h1 id="前言：介绍在使用编译器编写代码时与debug的不同之处。"><a href="#前言：介绍在使用编译器编写代码时与debug的不同之处。" class="headerlink" title="前言：介绍在使用编译器编写代码时与debug的不同之处。"></a>前言：介绍在使用编译器编写代码时与debug的不同之处。</h1><h1 id="正文：在debug中，我们可以使用mov-ax，-0-代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为-0-的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move-bx-0，然后把这条指令改为move-ax，-bx-，此时就可以将内存单元为-0-的值放入ax中了。"><a href="#正文：在debug中，我们可以使用mov-ax，-0-代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为-0-的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move-bx-0，然后把这条指令改为move-ax，-bx-，此时就可以将内存单元为-0-的值放入ax中了。" class="headerlink" title="正文：在debug中，我们可以使用mov ax，[0]代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为[0]的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move bx 0，然后把这条指令改为move ax，[bx]，此时就可以将内存单元为[0]的值放入ax中了。"></a>正文：在debug中，我们可以使用mov ax，[0]代表把默认存在DS寄存器中的值：0这个单元内存的内容放入ax寄存器中，而在masm编译器中这条指令最终执行的结果是把0放入ax寄存器中，如果需要将内存单元为[0]的内容放入ax的话，我们需要在此条指令之前加上一条指令为：move bx 0，然后把这条指令改为move ax，[bx]，此时就可以将内存单元为[0]的值放入ax中了。</h1><h1 id="注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。"><a href="#注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。" class="headerlink" title="注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。"></a>注意：我们知道内存是以字为单位的，也就是两个字节，当我们要将一个数值放入内存中的时候，在寄存器中的值会从左到右先放入高位再放入地位。比如你此时在ax寄存器中的值为00be，然后把ax的值放入1000：0000的内存单元中，最后得到的结果把00放在1000：0001，把be放在1000：0000，所以在看内存的时候，注意要倒过来看。</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%965/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="骑驴看唱本">
+      <meta itemprop="description" content="爱拼才会赢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/13/%E5%AD%A6%E4%B9%A0%E6%B1%87%E7%BC%965/" class="post-title-link" itemprop="url">学习汇编5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-11-13 08:27:58 / Modified: 08:48:51" itemprop="dateCreated datePublished" datetime="2021-11-13T08:27:58+08:00">2021-11-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="引言：本文将讲述我自己对-exe文件的执行过程的理解。"><a href="#引言：本文将讲述我自己对-exe文件的执行过程的理解。" class="headerlink" title="引言：本文将讲述我自己对.exe文件的执行过程的理解。"></a>引言：本文将讲述我自己对.exe文件的执行过程的理解。</h1><h1 id="正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个-asm文件，之后通过command使用masm-link或ml指令完成编译和链接成一个-exe文件。"><a href="#正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个-asm文件，之后通过command使用masm-link或ml指令完成编译和链接成一个-exe文件。" class="headerlink" title="正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个.asm文件，之后通过command使用masm+link或ml指令完成编译和链接成一个.exe文件。"></a>正文：如果是使用masm编译器的话，编写完一个程序，将会生成一个.asm文件，之后通过command使用masm+link或ml指令完成编译和链接成一个.exe文件。</h1><h1 id="exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000-10E：0。总而言之一个-exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。"><a href="#exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000-10E：0。总而言之一个-exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。" class="headerlink" title=".exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000+10E：0。总而言之一个.exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。"></a>.exe文件在执行的时候会以一个内存为256个字节的psp区域与CPU连接，让CPU执行该文件中的代码。为了区分段地址与偏移地址，假如文件开头地址为1000：0的话，那么实际上代码所在的地址为1000+10E：0。总而言之一个.exe文件的执行，必须CPU通过一段psp区域与文件产生连接，方可执行里面的代码。</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -550,7 +672,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -578,7 +700,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
